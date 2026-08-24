@@ -1,1 +1,194 @@
 
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEON//ZERO | Waitlist</title>
+    <style>
+        :root {
+            --bg-color: #05050a;
+            --neon-pink: #ff007f;
+            --neon-blue: #00f3ff;
+            --card-bg: rgba(15, 15, 25, 0.9);
+            --text-main: #e0e0e0;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            overflow-x: hidden;
+            background-image: radial-gradient(circle at center, #15002b 0%, var(--bg-color) 80%);
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            border-bottom: 1px solid rgba(255, 0, 127, 0.2);
+            background: rgba(5, 5, 10, 0.95);
+            backdrop-filter: blur(10px);
+        }
+        .logo {
+            font-size: 20px;
+            font-weight: bold;
+            color: var(--neon-pink);
+            letter-spacing: 2px;
+            text-shadow: 0 0 10px rgba(255, 0, 127, 0.5);
+        }
+        .logo span { color: var(--neon-blue); }
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+        .nav-links a:hover { color: var(--neon-blue); }
+
+        .hero {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px 20px;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .badge {
+            background: rgba(255, 0, 127, 0.1);
+            border: 1px solid var(--neon-pink);
+            color: var(--neon-pink);
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-size: 12px;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            box-shadow: 0 0 10px rgba(255, 0, 127, 0.2);
+        }
+        .hero h1 {
+            font-size: clamp(32px, 5vw, 52px);
+            color: #fff;
+            margin-bottom: 15px;
+            letter-spacing: 3px;
+            text-shadow: 0 0 20px var(--neon-pink);
+        }
+        .hero p {
+            font-size: clamp(14px, 2vw, 16px);
+            color: #aaa;
+            margin-bottom: 35px;
+            line-height: 1.6;
+        }
+        .waitlist-box {
+            background: var(--card-bg);
+            border: 1px solid rgba(0, 243, 255, 0.3);
+            padding: 30px;
+            border-radius: 8px;
+            width: 100%;
+            box-shadow: 0 0 25px rgba(0, 243, 255, 0.05);
+        }
+        .form-group {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        input[type="email"] {
+            flex: 1;
+            min-width: 240px;
+            padding: 14px 16px;
+            background: #0a0a12;
+            border: 1px solid #333;
+            border-radius: 4px;
+            color: #fff;
+            font-size: 15px;
+            outline: none;
+        }
+        input[type="email"]:focus {
+            border-color: var(--neon-blue);
+            box-shadow: 0 0 10px rgba(0, 243, 255, 0.2);
+        }
+        .btn-submit {
+            background: linear-gradient(45deg, var(--neon-pink), var(--neon-blue));
+            color: #000;
+            font-weight: bold;
+            padding: 14px 28px;
+            border: none;
+            border-radius: 4px;
+            font-size: 15px;
+            cursor: pointer;
+            letter-spacing: 1px;
+        }
+        .btn-submit:hover {
+            transform: scale(1.02);
+            box-shadow: 0 0 20px var(--neon-blue);
+        }
+        .success-msg {
+            display: none;
+            color: var(--neon-blue);
+            margin-top: 15px;
+            font-size: 14px;
+            letter-spacing: 1px;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            font-size: 12px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">NEON<span>//</span>ZERO</div>
+        <div class="nav-links">
+            <a href="https://discord.gg/your-invite-link" target="_blank">Discord</a>
+            <a href="https://x.com/NeonZeroNFT" target="_blank">X (Twitter)</a>
+        </div>
+    </nav>
+
+    <div class="hero">
+        <div class="badge">SYSTEM INITIALIZATION</div>
+        <h1>SECURE YOUR SPOT</h1>
+        <p>Join the waitlist for NEON//ZERO. 2,222 unique digital identities on Robinhood Chain. Early subscribers get priority access to Free Mint & GTD allocations.</p>
+        
+        <div class="waitlist-box">
+            <form id="waitlistForm" onsubmit="handleWaitlist(event)">
+                <div class="form-group">
+                    <input type="email" id="emailInput" placeholder="Enter your email address..." required>
+                    <button type="submit" class="btn-submit">JOIN WAITLIST</button>
+                </div>
+                <div id="successMessage" class="success-msg">⚡ ACCESS GRANTED. YOU ARE ON THE WAITLIST.</div>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2026 NEON//ZERO. All rights reserved.
+    </footer>
+
+    <script>
+        function handleWaitlist(event) {
+            event.preventDefault();
+            const email = document.getElementById('emailInput').value;
+            if(email) {
+                document.getElementById('emailInput').style.display = 'none';
+                document.querySelector('.btn-submit').style.display = 'none';
+                document.getElementById('successMessage').style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>
