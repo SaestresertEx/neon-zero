@@ -32,7 +32,7 @@
             overflow-x: hidden;
         }
 
-        /* Navbar */
+        /* NAVBAR */
         nav {
             display: flex;
             justify-content: space-between;
@@ -62,12 +62,12 @@
         .nav-links {
             display: flex;
             align-items: center;
-            gap: 20px;
         }
 
         .nav-links a {
             color: #fff;
             text-decoration: none;
+            margin-left: 25px;
             font-size: 14px;
             transition: 0.3s;
         }
@@ -76,7 +76,7 @@
             color: var(--neon-blue);
         }
 
-        /* Hero Section */
+        /* HERO */
         header.hero {
             min-height: 100vh;
             display: flex;
@@ -85,11 +85,22 @@
             align-items: center;
             text-align: center;
             padding: 120px 20px 60px;
-            background: radial-gradient(
-                circle at center,
-                #15002b 0%,
-                var(--bg-color) 70%
-            );
+            background:
+                radial-gradient(
+                    circle at center,
+                    #15002b 0%,
+                    var(--bg-color) 70%
+                );
+        }
+
+        .badge {
+            color: var(--neon-blue);
+            border: 1px solid rgba(0, 243, 255, 0.4);
+            padding: 8px 14px;
+            margin-bottom: 20px;
+            font-size: 12px;
+            letter-spacing: 2px;
+            box-shadow: 0 0 15px rgba(0, 243, 255, 0.15);
         }
 
         header.hero h1 {
@@ -101,13 +112,15 @@
         }
 
         header.hero p {
+            max-width: 850px;
             font-size: clamp(14px, 2vw, 18px);
             color: var(--neon-blue);
             margin-bottom: 40px;
+            line-height: 1.6;
             letter-spacing: 2px;
         }
 
-        /* Stats Grid */
+        /* ALLOCATION GRID */
         .stats-container {
             display: grid;
             grid-template-columns: repeat(
@@ -116,40 +129,50 @@
             );
             gap: 15px;
             width: 100%;
-            max-width: 900px;
+            max-width: 950px;
             margin-bottom: 40px;
         }
 
         .stat-box {
             background: var(--card-bg);
             border: 1px solid rgba(0, 243, 255, 0.3);
-            padding: 20px;
+            padding: 25px 20px;
             border-radius: 6px;
             box-shadow: 0 0 15px rgba(0, 243, 255, 0.05);
+            transition: 0.3s;
+        }
+
+        .stat-box:hover {
+            transform: translateY(-5px);
+            border-color: var(--neon-pink);
+            box-shadow: 0 0 25px rgba(255, 0, 127, 0.15);
         }
 
         .stat-box h3 {
             color: var(--neon-pink);
-            font-size: 24px;
-            margin-bottom: 5px;
+            font-size: 28px;
+            margin-bottom: 10px;
         }
 
         .stat-box span {
+            display: block;
             font-size: 12px;
-            color: #888;
+            color: #aaa;
             letter-spacing: 1px;
+            line-height: 1.5;
         }
 
-        /* Main Button */
+        /* BUTTON */
         .btn-main {
-            background: linear-gradient(
-                45deg,
-                var(--neon-pink),
-                var(--neon-blue)
-            );
+            background:
+                linear-gradient(
+                    45deg,
+                    var(--neon-pink),
+                    var(--neon-blue)
+                );
             color: #000;
             font-weight: bold;
-            padding: 14px 35px;
+            padding: 15px 35px;
             border: none;
             border-radius: 4px;
             font-size: 16px;
@@ -165,62 +188,60 @@
             box-shadow: 0 0 30px var(--neon-blue);
         }
 
-        /* Sections */
+        /* SECTIONS */
         section {
-            padding: 80px 10%;
+            padding: 90px 10%;
             border-top: 1px solid rgba(255, 255, 255, 0.05);
             text-align: center;
         }
 
         section h2 {
             font-size: 28px;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             color: #fff;
-            letter-spacing: 2px;
+            letter-spacing: 3px;
         }
 
         section p {
-            max-width: 700px;
+            max-width: 750px;
             margin: 0 auto;
             color: #aaa;
-            line-height: 1.6;
+            line-height: 1.8;
             font-size: 15px;
         }
 
-        /* Mission / Waitlist */
-        .waitlist-box {
-            width: 100%;
-            max-width: 650px;
-            margin: 35px auto 0;
+        /* ABOUT CARD */
+        .about-card {
+            max-width: 800px;
+            margin: 0 auto;
             padding: 30px;
             background: var(--card-bg);
-            border: 1px solid rgba(0, 243, 255, 0.3);
-            border-radius: 6px;
-            box-shadow: 0 0 25px rgba(0, 243, 255, 0.08);
+            border: 1px solid rgba(255, 0, 127, 0.2);
         }
 
+        /* MISSION */
         .mission-text {
-            color: #fff;
-            margin-bottom: 20px;
-            line-height: 1.8;
+            color: var(--neon-blue);
+            margin-bottom: 25px;
             font-size: 14px;
+            letter-spacing: 1px;
         }
 
         .mission-buttons {
             display: flex;
             justify-content: center;
             gap: 15px;
-            margin-bottom: 25px;
             flex-wrap: wrap;
         }
 
         .btn-mission {
-            color: var(--neon-blue);
+            display: inline-block;
+            padding: 13px 22px;
+            color: #fff;
             text-decoration: none;
             border: 1px solid var(--neon-blue);
-            padding: 12px 18px;
-            border-radius: 4px;
             font-size: 13px;
+            letter-spacing: 1px;
             transition: 0.3s;
         }
 
@@ -230,52 +251,7 @@
             box-shadow: 0 0 20px var(--neon-blue);
         }
 
-        .form-group {
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        input[type="email"] {
-            flex: 1;
-            min-width: 220px;
-            padding: 14px;
-            background: #080812;
-            color: #fff;
-            border: 1px solid var(--neon-blue);
-            border-radius: 4px;
-            outline: none;
-        }
-
-        input[type="email"]:focus {
-            box-shadow: 0 0 10px rgba(0, 243, 255, 0.3);
-        }
-
-        .btn-submit {
-            background: linear-gradient(
-                45deg,
-                var(--neon-pink),
-                var(--neon-blue)
-            );
-            color: #000;
-            font-weight: bold;
-            padding: 14px 25px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            letter-spacing: 1px;
-        }
-
-        .success-msg {
-            display: none;
-            color: var(--neon-blue);
-            margin-top: 15px;
-            font-size: 14px;
-            letter-spacing: 1px;
-        }
-
-        /* Footer */
+        /* FOOTER */
         footer {
             text-align: center;
             padding: 30px;
@@ -284,34 +260,35 @@
             color: #555;
         }
 
-        /* Mobile */
+        /* MOBILE */
         @media (max-width: 600px) {
             nav {
                 padding: 15px 5%;
+            }
+
+            .nav-links a {
+                margin-left: 12px;
+                font-size: 12px;
             }
 
             .logo {
                 font-size: 16px;
             }
 
-            .nav-links {
-                gap: 12px;
+            .stats-container {
+                grid-template-columns: repeat(2, 1fr);
             }
 
-            .nav-links a {
-                font-size: 11px;
+            .stat-box {
+                padding: 18px 10px;
             }
 
-            .form-group {
-                flex-direction: column;
+            .stat-box h3 {
+                font-size: 23px;
             }
 
-            input[type="email"] {
-                width: 100%;
-            }
-
-            .btn-submit {
-                width: 100%;
+            section {
+                padding: 70px 7%;
             }
         }
     </style>
@@ -327,25 +304,40 @@
 
         <div class="nav-links">
             <a href="#about">ABOUT</a>
-            <a href="#mission">MISSION</a>
-            <a href="https://x.com/NeonZeroNFT" target="_blank">
-                X
-            </a>
-            <a href="https://discord.gg/yhNdndhFH" target="_blank">
+
+            <a
+                href="https://discord.gg/yhNdndhFH"
+                target="_blank"
+            >
                 DISCORD
+            </a>
+
+            <a
+                href="https://x.com/NeonZeroNFT"
+                target="_blank"
+            >
+                X
             </a>
         </div>
     </nav>
 
+
     <!-- HERO -->
     <header class="hero">
-        <h1>ENTER THE ZERO</h1>
+
+        <div class="badge">
+            NEON//ZERO — OFFICIAL COLLECTION
+        </div>
+
+        <h1>THE FUTURE IS NEON</h1>
 
         <p>
-            2,222 UNIQUE DIGITAL IDENTITIES
-            ON THE ROBINHOOD CHAIN
+            THE POWER IS ZERO — 2,222 UNIQUE DIGITAL
+            IDENTITIES ON ROBINHOOD CHAIN
         </p>
 
+
+        <!-- FINAL ALLOCATION -->
         <div class="stats-container">
 
             <div class="stat-box">
@@ -354,141 +346,100 @@
             </div>
 
             <div class="stat-box">
-                <h3>222</h3>
-                <span>FREE MINT</span>
+                <h3>300</h3>
+                <span>🎁 FREE MINT</span>
             </div>
 
             <div class="stat-box">
                 <h3>1,500</h3>
-                <span>GTD / PUBLIC</span>
+                <span>🚀 GTD / PUBLIC</span>
+            </div>
+
+            <div class="stat-box">
+                <h3>322</h3>
+                <span>
+                    💎 FOUNDING RESERVE<br>
+                    / INITIAL FUND
+                </span>
             </div>
 
             <div class="stat-box">
                 <h3>100</h3>
-                <span>SPECIAL 1/1</span>
+                <span>🛡️ TEAM</span>
             </div>
 
         </div>
 
+
         <a
-            href="#mission"
+            href="https://discord.gg/yhNdndhFH"
             class="btn-main"
+            target="_blank"
         >
-            ENTER WAITLIST
+            JOIN DISCORD & WL
         </a>
+
     </header>
+
 
     <!-- ABOUT -->
     <section id="about">
+
         <h2>THE UNIVERSE</h2>
 
-        <p>
-            In a world where identity is lost in the noise,
-            NEON//ZERO rises.
-            2,222 souls with no limits, no rules, no masters.
-            Built for collectors, creators, and explorers
-            who dare to step into the neon grid.
-        </p>
-    </section>
+        <div class="about-card">
 
-    <!-- MISSION / WAITLIST -->
-    <section id="mission">
-        <h2>NEON//ZERO OFFICIAL WAITLIST</h2>
-
-        <p>
-            COMPLETE THE MISSION.
-            FOLLOW THE SIGNAL.
-            SECURE YOUR PLACE IN THE ZERO.
-        </p>
-
-        <div class="waitlist-box">
-
-            <div class="mission-text">
-                COMPLETE THE MISSION:<br><br>
-                01. FOLLOW US ON X<br>
-                02. JOIN OUR DISCORD<br>
-                03. SUBMIT YOUR EMAIL
-            </div>
-
-            <div class="mission-buttons">
-
-                <a
-                    href="https://x.com/NeonZeroNFT"
-                    target="_blank"
-                    class="btn-mission"
-                >
-                    01. FOLLOW X
-                </a>
-
-                <a
-                    href="https://discord.gg/yhNdndhFH"
-                    target="_blank"
-                    class="btn-mission"
-                >
-                    02. JOIN DISCORD
-                </a>
-
-            </div>
-
-            <form
-                id="waitlistForm"
-                onsubmit="handleWaitlist(event)"
-            >
-                <div class="form-group">
-
-                    <input
-                        type="email"
-                        id="emailInput"
-                        placeholder="ENTER YOUR EMAIL..."
-                        required
-                    >
-
-                    <button
-                        type="submit"
-                        class="btn-submit"
-                    >
-                        03. JOIN WAITLIST
-                    </button>
-
-                </div>
-
-                <div
-                    id="successMessage"
-                    class="success-msg"
-                >
-                    ⚡ ACCESS GRANTED.
-                    CHECK DISCORD FOR OG / GTD EVENTS.
-                </div>
-
-            </form>
+            <p>
+                In a world where identity is lost in the noise,
+                NEON//ZERO rises.
+                2,222 unique digital identities with no limits,
+                no rules, no masters.
+                Built for collectors, creators, and explorers who
+                dare to step into the neon grid.
+            </p>
 
         </div>
+
     </section>
+
+
+    <!-- MISSION -->
+    <section id="mission">
+
+        <h2>COMPLETE THE MISSION</h2>
+
+        <p class="mission-text">
+            FOLLOW X → JOIN DISCORD → ENTER THE NEON GRID
+        </p>
+
+        <div class="mission-buttons">
+
+            <a
+                href="https://x.com/NeonZeroNFT"
+                class="btn-mission"
+                target="_blank"
+            >
+                01. FOLLOW X
+            </a>
+
+            <a
+                href="https://discord.gg/yhNdndhFH"
+                class="btn-mission"
+                target="_blank"
+            >
+                02. JOIN DISCORD
+            </a>
+
+        </div>
+
+    </section>
+
 
     <!-- FOOTER -->
     <footer>
         © 2026 NEON//ZERO. ALL RIGHTS RESERVED.
     </footer>
 
-    <script>
-        function handleWaitlist(event) {
-            event.preventDefault();
-
-            const email =
-                document.getElementById('emailInput').value;
-
-            if (email) {
-                document.getElementById('emailInput')
-                    .style.display = 'none';
-
-                document.querySelector('.btn-submit')
-                    .style.display = 'none';
-
-                document.getElementById('successMessage')
-                    .style.display = 'block';
-            }
-        }
-    </script>
 
 </body>
-</html>
+                </html>
