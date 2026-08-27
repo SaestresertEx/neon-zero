@@ -1,445 +1,229 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>NEON//ZERO | 2,222 Unique Digital Identities</title>
-
-    <style>
-        :root {
-            --bg-color: #05050a;
-            --neon-pink: #ff007f;
-            --neon-blue: #00f3ff;
-            --card-bg: rgba(15, 15, 25, 0.85);
-            --text-main: #e0e0e0;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Courier New', Courier, monospace;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            overflow-x: hidden;
-        }
-
-        /* NAVBAR */
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 5%;
-            background: rgba(5, 5, 10, 0.95);
-            border-bottom: 1px solid rgba(255, 0, 127, 0.2);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 100;
-            backdrop-filter: blur(10px);
-        }
-
-        .logo {
-            font-size: 20px;
-            font-weight: bold;
-            color: var(--neon-pink);
-            letter-spacing: 2px;
-            text-shadow: 0 0 10px rgba(255, 0, 127, 0.5);
-        }
-
-        .logo span {
-            color: var(--neon-blue);
-        }
-
-        .nav-links {
-            display: flex;
-            align-items: center;
-        }
-
-        .nav-links a {
-            color: #fff;
-            text-decoration: none;
-            margin-left: 25px;
-            font-size: 14px;
-            transition: 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: var(--neon-blue);
-        }
-
-        /* HERO */
-        header.hero {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 120px 20px 60px;
-            background:
-                radial-gradient(
-                    circle at center,
-                    #15002b 0%,
-                    var(--bg-color) 70%
-                );
-        }
-
-        .badge {
-            color: var(--neon-blue);
-            border: 1px solid rgba(0, 243, 255, 0.4);
-            padding: 8px 14px;
-            margin-bottom: 20px;
-            font-size: 12px;
-            letter-spacing: 2px;
-            box-shadow: 0 0 15px rgba(0, 243, 255, 0.15);
-        }
-
-        header.hero h1 {
-            font-size: clamp(36px, 6vw, 64px);
-            color: #fff;
-            margin-bottom: 15px;
-            letter-spacing: 4px;
-            text-shadow: 0 0 25px var(--neon-pink);
-        }
-
-        header.hero p {
-            max-width: 850px;
-            font-size: clamp(14px, 2vw, 18px);
-            color: var(--neon-blue);
-            margin-bottom: 40px;
-            line-height: 1.6;
-            letter-spacing: 2px;
-        }
-
-        /* ALLOCATION GRID */
-        .stats-container {
-            display: grid;
-            grid-template-columns: repeat(
-                auto-fit,
-                minmax(180px, 1fr)
-            );
-            gap: 15px;
-            width: 100%;
-            max-width: 950px;
-            margin-bottom: 40px;
-        }
-
-        .stat-box {
-            background: var(--card-bg);
-            border: 1px solid rgba(0, 243, 255, 0.3);
-            padding: 25px 20px;
-            border-radius: 6px;
-            box-shadow: 0 0 15px rgba(0, 243, 255, 0.05);
-            transition: 0.3s;
-        }
-
-        .stat-box:hover {
-            transform: translateY(-5px);
-            border-color: var(--neon-pink);
-            box-shadow: 0 0 25px rgba(255, 0, 127, 0.15);
-        }
-
-        .stat-box h3 {
-            color: var(--neon-pink);
-            font-size: 28px;
-            margin-bottom: 10px;
-        }
-
-        .stat-box span {
-            display: block;
-            font-size: 12px;
-            color: #aaa;
-            letter-spacing: 1px;
-            line-height: 1.5;
-        }
-
-        /* BUTTON */
-        .btn-main {
-            background:
-                linear-gradient(
-                    45deg,
-                    var(--neon-pink),
-                    var(--neon-blue)
-                );
-            color: #000;
-            font-weight: bold;
-            padding: 15px 35px;
-            border: none;
-            border-radius: 4px;
-            font-size: 16px;
-            cursor: pointer;
-            text-decoration: none;
-            letter-spacing: 2px;
-            transition: 0.3s;
-            box-shadow: 0 0 20px rgba(255, 0, 127, 0.4);
-        }
-
-        .btn-main:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 30px var(--neon-blue);
-        }
-
-        /* SECTIONS */
-        section {
-            padding: 90px 10%;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-            text-align: center;
-        }
-
-        section h2 {
-            font-size: 28px;
-            margin-bottom: 25px;
-            color: #fff;
-            letter-spacing: 3px;
-        }
-
-        section p {
-            max-width: 750px;
-            margin: 0 auto;
-            color: #aaa;
-            line-height: 1.8;
-            font-size: 15px;
-        }
-
-        /* ABOUT CARD */
-        .about-card {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 30px;
-            background: var(--card-bg);
-            border: 1px solid rgba(255, 0, 127, 0.2);
-        }
-
-        /* MISSION */
-        .mission-text {
-            color: var(--neon-blue);
-            margin-bottom: 25px;
-            font-size: 14px;
-            letter-spacing: 1px;
-        }
-
-        .mission-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-
-        .btn-mission {
-            display: inline-block;
-            padding: 13px 22px;
-            color: #fff;
-            text-decoration: none;
-            border: 1px solid var(--neon-blue);
-            font-size: 13px;
-            letter-spacing: 1px;
-            transition: 0.3s;
-        }
-
-        .btn-mission:hover {
-            background: var(--neon-blue);
-            color: #000;
-            box-shadow: 0 0 20px var(--neon-blue);
-        }
-
-        /* FOOTER */
-        footer {
-            text-align: center;
-            padding: 30px;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-            font-size: 12px;
-            color: #555;
-        }
-
-        /* MOBILE */
-        @media (max-width: 600px) {
-            nav {
-                padding: 15px 5%;
-            }
-
-            .nav-links a {
-                margin-left: 12px;
-                font-size: 12px;
-            }
-
-            .logo {
-                font-size: 16px;
-            }
-
-            .stats-container {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .stat-box {
-                padding: 18px 10px;
-            }
-
-            .stat-box h3 {
-                font-size: 23px;
-            }
-
-            section {
-                padding: 70px 7%;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#07070b">
+<meta name="description" content="NEON/ZERO — 5,000 unique cyberpunk NFT identities. The collection is the signal. The ecosystem is the network.">
+<title>NEON/ZERO — Official Project</title>
+<style>
+:root{
+  --bg:#07070b; --bg2:#0d0d15; --panel:#11111b; --panel2:#151522;
+  --text:#f4f4fb; --muted:#9c9cac; --line:rgba(255,255,255,.10);
+  --cyan:#42f5ff; --purple:#9b5cff; --pink:#ff4fd8; --green:#6dff9c;
+  --max:1180px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--text);background:
+  radial-gradient(circle at 15% 10%,rgba(155,92,255,.18),transparent 28%),
+  radial-gradient(circle at 85% 20%,rgba(66,245,255,.12),transparent 25%),
+  linear-gradient(180deg,#07070b,#0a0a12 55%,#07070b);
+  line-height:1.6;overflow-x:hidden
+}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--max);margin:auto;padding:0 22px}
+nav{position:sticky;top:0;z-index:30;background:rgba(7,7,11,.78);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.navin{height:70px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+.brand{font-weight:900;letter-spacing:2px;font-size:22px}.brand span{color:var(--cyan)}
+.links{display:flex;gap:18px;align-items:center;font-size:14px;color:var(--muted)}
+.links a:hover{color:var(--cyan)}
+.menu{display:none;background:none;border:1px solid var(--line);color:#fff;padding:8px 11px;border-radius:8px}
+.hero{min-height:88vh;display:grid;place-items:center;position:relative;border-bottom:1px solid var(--line)}
+.grid{position:absolute;inset:0;opacity:.22;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:55px 55px;mask-image:linear-gradient(to bottom,#000,transparent)}
+.hero .wrap{position:relative;text-align:center;padding-top:70px;padding-bottom:80px}
+.kicker{display:inline-block;border:1px solid rgba(66,245,255,.35);color:var(--cyan);padding:8px 13px;border-radius:999px;font-size:12px;letter-spacing:1.5px}
+h1{font-size:clamp(52px,11vw,130px);line-height:.92;margin:24px 0 18px;letter-spacing:-4px}
+.neon{color:var(--cyan);text-shadow:0 0 24px rgba(66,245,255,.55)}
+.hero p{max-width:760px;margin:0 auto;color:#c8c8d4;font-size:18px}
+.actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:30px}
+.btn{padding:13px 19px;border-radius:9px;font-weight:800;border:1px solid var(--line);transition:.2s}
+.btn.primary{background:linear-gradient(135deg,var(--cyan),#7a78ff);color:#061018}
+.btn:hover{transform:translateY(-2px);box-shadow:0 0 30px rgba(66,245,255,.15)}
+.status{margin:32px auto 0;max-width:880px;border:1px solid rgba(255,255,255,.11);background:rgba(17,17,27,.65);padding:12px 15px;color:#b9b9c7;font-size:13px}
+section{padding:90px 0;border-bottom:1px solid var(--line)}
+.eyebrow{color:var(--purple);font-size:12px;font-weight:900;letter-spacing:2px;text-transform:uppercase}
+h2{font-size:clamp(30px,5vw,52px);margin:8px 0 16px;line-height:1.05}
+.lead{max-width:780px;color:var(--muted);font-size:17px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:30px}
+.card{background:linear-gradient(180deg,rgba(21,21,34,.9),rgba(12,12,19,.9));border:1px solid var(--line);padding:22px;border-radius:14px}
+.card h3{margin:0 0 8px}.card p{margin:0;color:var(--muted)}
+.stats{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:26px}
+.stat{padding:20px 12px;text-align:center;border:1px solid var(--line);background:var(--panel);border-radius:12px}
+.stat b{display:block;font-size:25px;color:var(--cyan)}.stat small{color:var(--muted)}
+.table{overflow:auto;margin-top:25px;border:1px solid var(--line);border-radius:12px}
+table{width:100%;border-collapse:collapse;min-width:650px;background:rgba(17,17,27,.75)}
+th,td{padding:14px;text-align:left;border-bottom:1px solid var(--line);font-size:14px}
+th{color:var(--cyan);background:rgba(66,245,255,.05)}
+td{color:#c8c8d4}
+.phase{display:grid;grid-template-columns:130px 1fr;gap:22px;padding:22px 0;border-bottom:1px solid var(--line)}
+.phase:last-child{border-bottom:0}.phase .tag{color:var(--cyan);font-weight:900;letter-spacing:1px}
+.phase p{margin:6px 0 0;color:var(--muted)}
+.notice{border-left:3px solid var(--pink);padding:16px 18px;background:rgba(255,79,216,.06);color:#d6c5d3;margin-top:25px}
+.faq details{border-bottom:1px solid var(--line);padding:18px 0}.faq summary{cursor:pointer;font-weight:800}.faq p{color:var(--muted);margin-bottom:0}
+.footer{padding:45px 0;color:var(--muted);font-size:13px}.footin{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.mobile{display:none}
+@media(max-width:820px){
+  .links{display:none}.menu{display:block}.mobile.open{display:flex;flex-direction:column;padding:12px 22px 18px;gap:12px;background:#0b0b12;border-top:1px solid var(--line)}
+  .cards{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr)}.phase{grid-template-columns:1fr;gap:6px}
+}
+</style>
 </head>
-
 <body>
+<nav>
+  <div class="wrap navin">
+    <a class="brand" href="#top">NEON<span>/</span>ZERO</a>
+    <div class="links">
+      <a href="#collection">Collection</a><a href="#system">System</a><a href="#roadmap">Roadmap</a><a href="#zeros">$ZEROS</a><a href="#faq">FAQ</a>
+      <a href="https://x.com/NeonZeroNFT" target="_blank" rel="noopener">X ↗</a>
+      <a href="https://discord.gg/9NRn62xuG" target="_blank" rel="noopener">Discord ↗</a>
+    </div>
+    <button class="menu" id="menuBtn">MENU</button>
+  </div>
+  <div class="mobile" id="mobileMenu">
+    <a href="#collection">Collection</a><a href="#system">System</a><a href="#roadmap">Roadmap</a><a href="#zeros">$ZEROS</a><a href="#faq">FAQ</a>
+    <a href="https://x.com/NeonZeroNFT" target="_blank" rel="noopener">Official X</a>
+    <a href="https://discord.gg/9NRn62xuG" target="_blank" rel="noopener">Official Discord</a>
+  </div>
+</nav>
 
-    <!-- NAVBAR -->
-    <nav>
-        <div class="logo">
-            NEON<span>//</span>ZERO
-        </div>
+<main id="top">
+<section class="hero">
+  <div class="grid"></div>
+  <div class="wrap">
+    <div class="kicker">OFFICIAL PROJECT • 5,000 IDENTITIES • THE ZERO NETWORK</div>
+    <h1>NEON<span class="neon">/</span>ZERO</h1>
+    <p>The collection is the signal. The ecosystem is the network. A rule-based cyberpunk NFT universe designed around 5,000 unique identities and a future planned $ZEROS ecosystem.</p>
+    <div class="actions">
+      <a class="btn primary" href="#collection">ENTER THE PROJECT</a>
+      <a class="btn" href="https://x.com/NeonZeroNFT" target="_blank" rel="noopener">FOLLOW ON X ↗</a>
+      <a class="btn" href="https://discord.gg/9NRn62xuG" target="_blank" rel="noopener">JOIN DISCORD ↗</a>
+    </div>
+    <div class="status">CURRENT STATUS: COLLECTION FOUNDATION • TRAIT / RARITY / VALIDATION FRAMEWORK • FUTURE $ZEROS ECOSYSTEM: PLANNED, NOT LIVE</div>
+  </div>
+</section>
 
-        <div class="nav-links">
-            <a href="#about">ABOUT</a>
+<section id="collection"><div class="wrap">
+  <div class="eyebrow">01 — THE COLLECTION</div>
+  <h2>5,000 signals.<br>One NEON/ZERO universe.</h2>
+  <p class="lead">NEON/ZERO is built around controlled trait combinations, rarity targets, compatibility rules and quality control. The goal is not simply to produce random avatars, but to maintain a coherent visual system across the full collection.</p>
+  <div class="stats">
+    <div class="stat"><b>5,000</b><small>Total NFTs</small></div>
+    <div class="stat"><b>#0001–#5000</b><small>Token Range</small></div>
+    <div class="stat"><b>5</b><small>Rarity Tiers</small></div>
+    <div class="stat"><b>14</b><small>Trait Categories</small></div>
+    <div class="stat"><b>N//Z</b><small>Core Symbol</small></div>
+  </div>
+</div></section>
 
-            <a
-                href="https://discord.gg/yhNdndhFH"
-                target="_blank"
-            >
-                DISCORD
-            </a>
+<section id="system"><div class="wrap">
+  <div class="eyebrow">02 — THE SYSTEM</div>
+  <h2>Controlled generation.<br>Not uncontrolled randomness.</h2>
+  <p class="lead">Each production record is governed by the trait database and collection rules before it is approved for artwork generation.</p>
+  <div class="cards">
+    <div class="card"><h3>Trait Database</h3><p>Character Base, Hair, Eyes, Expression, Mask, Outfit, Headgear, Accessories, Background, Neon Color, Emblem and Effects.</p></div>
+    <div class="card"><h3>Rarity & Compatibility</h3><p>Rarity targets define collection structure while compatibility rules help prevent prohibited visual combinations.</p></div>
+    <div class="card"><h3>QC & Validation</h3><p>Supply, token IDs, full combinations, rarity totals and final production records are checked before release.</p></div>
+  </div>
+  <div class="table">
+    <table><thead><tr><th>Rarity</th><th>Target Supply</th><th>Share</th></tr></thead>
+    <tbody>
+      <tr><td>Common</td><td>3,000</td><td>60%</td></tr>
+      <tr><td>Uncommon</td><td>1,250</td><td>25%</td></tr>
+      <tr><td>Rare</td><td>500</td><td>10%</td></tr>
+      <tr><td>Epic</td><td>200</td><td>4%</td></tr>
+      <tr><td>Legendary</td><td>50</td><td>1%</td></tr>
+    </tbody></table>
+  </div>
+</div></section>
 
-            <a
-                href="https://x.com/NeonZeroNFT"
-                target="_blank"
-            >
-                X
-            </a>
-        </div>
-    </nav>
+<section><div class="wrap">
+  <div class="eyebrow">03 — QUALITY CONTROL</div>
+  <h2>Every signal must pass.</h2>
+  <div class="cards">
+    <div class="card"><h3>Unique IDs</h3><p>5,000 unique token records across the planned #0001–#5000 range.</p></div>
+    <div class="card"><h3>Unique Combinations</h3><p>Duplicate full-trait combinations are blocked by the production framework.</p></div>
+    <div class="card"><h3>Final Integrity</h3><p>Images and metadata must be counted, checked and matched before final release.</p></div>
+  </div>
+</div></section>
 
+<section id="roadmap"><div class="wrap">
+  <div class="eyebrow">04 — ROADMAP</div>
+  <h2>Build the signal.<br>Then build the network.</h2>
+  <div style="margin-top:28px">
+    <div class="phase"><div class="tag">PHASE 0<br>FOUNDATION</div><div><b>Collection architecture & production controls</b><p>Complete the 5,000-piece framework, generation controls, image QC, metadata QC and official documentation.</p></div></div>
+    <div class="phase"><div class="tag">PHASE 1<br>GENESIS</div><div><b>Establish the collection</b><p>Launch the fixed collection and publish canonical project surfaces, collection information and rarity context.</p></div></div>
+    <div class="phase"><div class="tag">PHASE 2<br>ZERO NETWORK</div><div><b>Participation & identity</b><p>Develop holder/community experiences and expand the digital world around NEON/ZERO.</p></div></div>
+    <div class="phase"><div class="tag">PHASE 3<br>$ZEROS DESIGN</div><div><b>Formal specification before activation</b><p>Finalize utility, supply, distribution, technical architecture, security requirements and official documentation before any activation.</p></div></div>
+    <div class="phase"><div class="tag">PHASE 4<br>ACTIVATION</div><div><b>Activate only what is ready</b><p>Launch approved ecosystem modules only after their rules, implementation and user-facing information are complete.</p></div></div>
+    <div class="phase"><div class="tag">PHASE 5<br>EXPANSION</div><div><b>Extend the universe</b><p>Future experiences, integrations, collaborations and new ecosystem modules.</p></div></div>
+  </div>
+</div></section>
 
-    <!-- HERO -->
-    <header class="hero">
+<section id="zeros"><div class="wrap">
+  <div class="eyebrow">05 — PLANNED $ZEROS</div>
+  <h2>A future coordination layer.<br>Not a promise of profit.</h2>
+  <p class="lead">$ZEROS is documented as a proposed future ecosystem layer. It is not presented as live, purchasable, claimable or guaranteed.</p>
+  <div class="notice"><b>PLANNED / NOT LIVE:</b> No official contract address, launch date, listing, price target, yield, guaranteed airdrop or financial return is declared on this website.</div>
+  <div class="table">
+    <table><thead><tr><th>Proposed V3 Field</th><th>Current Design Direction</th></tr></thead>
+    <tbody>
+      <tr><td>Token</td><td>ZEROS / $ZEROS</td></tr>
+      <tr><td>Proposed maximum supply</td><td>1,000,000,000 $ZEROS</td></tr>
+      <tr><td>Automatic inflation</td><td>No automatic inflation in the proposed design</td></tr>
+      <tr><td>Potential role</td><td>Approved ecosystem participation and future utility modules</td></tr>
+      <tr><td>Open decisions</td><td>Blockchain, contract standard, decimals, launch structure and final eligibility mechanics</td></tr>
+    </tbody></table>
+  </div>
+  <div class="cards">
+    <div class="card"><h3>35%</h3><p>Community & Ecosystem — proposed future programs and ecosystem participation.</p></div>
+    <div class="card"><h3>20%</h3><p>Treasury — proposed long-term operations and ecosystem development.</p></div>
+    <div class="card"><h3>15% + 15%</h3><p>Liquidity and Team/Core Contributors — subject to final launch and vesting specifications.</p></div>
+  </div>
+</div></section>
 
-        <div class="badge">
-            NEON//ZERO — OFFICIAL COLLECTION
-        </div>
+<section><div class="wrap">
+  <div class="eyebrow">06 — THE ZERO PROTOCOL</div>
+  <h2>Identity. Signal. Transition.</h2>
+  <div class="cards">
+    <div class="card"><h3>THE SIGNAL</h3><p>The first contact point: a transmission that pulls an identity into the NEON/ZERO network.</p></div>
+    <div class="card"><h3>ZERO STATE</h3><p>A threshold where identity, machine, memory and signal can be reconfigured.</p></div>
+    <div class="card"><h3>ZERO PROTOCOL</h3><p>The signature system language behind designated high-tier motifs and combinations.</p></div>
+  </div>
+</div></section>
 
-        <h1>THE FUTURE IS NEON</h1>
+<section id="faq"><div class="wrap faq">
+  <div class="eyebrow">07 — FAQ</div>
+  <h2>Read the signal clearly.</h2>
+  <details><summary>How many NEON/ZERO NFTs are planned?</summary><p>Exactly 5,000, with the planned token range #0001 through #5000.</p></details>
+  <details><summary>How is rarity structured?</summary><p>The current project target is 60% Common, 25% Uncommon, 10% Rare, 4% Epic and 1% Legendary.</p></details>
+  <details><summary>Are duplicate full combinations allowed?</summary><p>No. The production framework is designed to block duplicate full-trait combinations.</p></details>
+  <details><summary>Is $ZEROS live?</summary><p>No. $ZEROS is currently documented as a planned ecosystem track. No official live token mechanics are declared here.</p></details>
+  <details><summary>Do NFT holders automatically receive future rewards?</summary><p>No automatic entitlement is declared. Any future program must publish eligibility and rules before activation.</p></details>
+</div></section>
 
-        <p>
-            THE POWER IS ZERO — 2,222 UNIQUE DIGITAL
-            IDENTITIES ON ROBINHOOD CHAIN
-        </p>
+<section><div class="wrap">
+  <div class="eyebrow">08 — OFFICIAL CHANNELS</div>
+  <h2>Follow only the signal.</h2>
+  <p class="lead">Use official channels for announcements. Never trust wallet instructions from unofficial DMs or reposted contract addresses.</p>
+  <div class="actions" style="justify-content:flex-start">
+    <a class="btn primary" href="https://x.com/NeonZeroNFT" target="_blank" rel="noopener">OFFICIAL X ↗</a>
+    <a class="btn" href="https://discord.gg/9NRn62xuG" target="_blank" rel="noopener">OFFICIAL DISCORD ↗</a>
+  </div>
+</div></section>
+</main>
 
+<footer class="footer"><div class="wrap footin">
+  <div><b>NEON/ZERO</b><br>ENTER THE SIGNAL. APPROACH ZERO.</div>
+  <div>© <span id="year"></span> NEON/ZERO • Project documentation website</div>
+</div></footer>
 
-        <!-- FINAL ALLOCATION -->
-        <div class="stats-container">
-
-            <div class="stat-box">
-                <h3>2,222</h3>
-                <span>TOTAL SUPPLY</span>
-            </div>
-
-            <div class="stat-box">
-                <h3>300</h3>
-                <span>🎁 FREE MINT</span>
-            </div>
-
-            <div class="stat-box">
-                <h3>1,500</h3>
-                <span>🚀 GTD / PUBLIC</span>
-            </div>
-
-            <div class="stat-box">
-                <h3>322</h3>
-                <span>
-                    💎 FOUNDING RESERVE<br>
-                    / INITIAL FUND
-                </span>
-            </div>
-
-            <div class="stat-box">
-                <h3>100</h3>
-                <span>🛡️ TEAM</span>
-            </div>
-
-        </div>
-
-
-        <a
-            href="https://discord.gg/yhNdndhFH"
-            class="btn-main"
-            target="_blank"
-        >
-            JOIN DISCORD & WL
-        </a>
-
-    </header>
-
-
-    <!-- ABOUT -->
-    <section id="about">
-
-        <h2>THE UNIVERSE</h2>
-
-        <div class="about-card">
-
-            <p>
-                In a world where identity is lost in the noise,
-                NEON//ZERO rises.
-                2,222 unique digital identities with no limits,
-                no rules, no masters.
-                Built for collectors, creators, and explorers who
-                dare to step into the neon grid.
-            </p>
-
-        </div>
-
-    </section>
-
-
-    <!-- MISSION -->
-    <section id="mission">
-
-        <h2>COMPLETE THE MISSION</h2>
-
-        <p class="mission-text">
-            FOLLOW X → JOIN DISCORD → ENTER THE NEON GRID
-        </p>
-
-        <div class="mission-buttons">
-
-            <a
-                href="https://x.com/NeonZeroNFT"
-                class="btn-mission"
-                target="_blank"
-            >
-                01. FOLLOW X
-            </a>
-
-            <a
-                href="https://discord.gg/yhNdndhFH"
-                class="btn-mission"
-                target="_blank"
-            >
-                02. JOIN DISCORD
-            </a>
-
-        </div>
-
-    </section>
-
-
-    <!-- FOOTER -->
-    <footer>
-        © 2026 NEON//ZERO. ALL RIGHTS RESERVED.
-    </footer>
-
-
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+const b=document.getElementById('menuBtn'),m=document.getElementById('mobileMenu');
+b.addEventListener('click',()=>m.classList.toggle('open'));
+document.querySelectorAll('#mobileMenu a').forEach(a=>a.addEventListener('click',()=>m.classList.remove('open')));
+</script>
 </body>
-                </html>
+</html>
