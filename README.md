@@ -1,2 +1,2 @@
 # neon-zero
-NEON//ZERO — Cyberpunk NFT Community &amp; Waitlist
+NEON//ZERO — Cyberpunk NFT Community
