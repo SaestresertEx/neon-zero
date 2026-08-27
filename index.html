@@ -1,2327 +1,479 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#020b07">
-<meta name="description" content="NEON//ZERO — The Executors of Digital Realm. A 5,000 NFT cyberpunk digital identity ecosystem built on RobinChain.">
 
-<title>NEON//ZERO — N/Z</title>
+<title>NEON/ZERO | Official</title>
 
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@400;500;600;700&display=swap');
+<link rel="stylesheet" href="style.css">
 
-:root{
-  --bg:#020806;
-  --bg2:#03130c;
-  --panel:#06180f;
-  --panel2:#081f14;
-  --green:#39ff88;
-  --green2:#9cffc2;
-  --text:#ecfff3;
-  --muted:#789889;
-  --line:rgba(57,255,136,.20);
-  --line2:rgba(57,255,136,.08);
-  --danger:#ff4d68;
-  --purple:#a56cff;
-  --cyan:#00eaff;
-  --pink:#ff3d9a;
-  --amber:#ffb52e;
-}
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-*{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
-}
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
 
-html{
-  scroll-behavior:smooth;
-}
-
-body{
-  background:
-    radial-gradient(circle at 50% 0%,rgba(0,255,120,.12),transparent 35%),
-    linear-gradient(rgba(57,255,136,.025) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(57,255,136,.025) 1px,transparent 1px),
-    var(--bg);
-  background-size:auto,40px 40px,40px 40px,auto;
-  color:var(--text);
-  font-family:Rajdhani,Arial,sans-serif;
-  overflow-x:hidden;
-}
-
-body:before{
-  content:"";
-  position:fixed;
-  inset:0;
-  pointer-events:none;
-  background:
-    repeating-linear-gradient(
-      0deg,
-      transparent 0px,
-      transparent 3px,
-      rgba(255,255,255,.008) 4px
-    );
-  z-index:999;
-}
-
-a{
-  color:inherit;
-  text-decoration:none;
-}
-
-button{
-  font-family:inherit;
-}
-
-.container{
-  width:min(1180px,92%);
-  margin:auto;
-}
-
-/* ================= HEADER ================= */
-
-header{
-  position:sticky;
-  top:0;
-  z-index:100;
-  background:rgba(2,8,6,.88);
-  backdrop-filter:blur(18px);
-  border-bottom:1px solid var(--line);
-}
-
-.nav{
-  min-height:72px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:25px;
-}
-
-.brand{
-  display:flex;
-  align-items:center;
-  gap:12px;
-  min-width:max-content;
-}
-
-.logo{
-  width:43px;
-  height:32px;
-  display:grid;
-  place-items:center;
-  background:var(--green);
-  color:#00150a;
-  font-family:Orbitron,sans-serif;
-  font-size:17px;
-  font-weight:900;
-  font-style:italic;
-  transform:skew(-12deg);
-  clip-path:polygon(10% 0,100% 0,90% 100%,0 100%);
-}
-
-.brand-name{
-  font-family:Orbitron,sans-serif;
-  font-weight:700;
-  letter-spacing:1px;
-}
-
-.brand-name span{
-  color:var(--green);
-}
-
-.brand-sub{
-  color:var(--muted);
-  font-size:10px;
-  letter-spacing:2px;
-  margin-top:2px;
-}
-
-.nav-links{
-  display:flex;
-  align-items:center;
-  gap:24px;
-}
-
-.nav-links a{
-  color:#9bb5a7;
-  font-family:Orbitron,sans-serif;
-  font-size:10px;
-  letter-spacing:.8px;
-  transition:.2s;
-}
-
-.nav-links a:hover{
-  color:var(--green);
-  text-shadow:0 0 12px rgba(57,255,136,.7);
-}
-
-.nav-btn{
-  border:1px solid var(--green);
-  color:var(--green);
-  padding:10px 16px;
-  font-family:Orbitron,sans-serif;
-  font-size:10px;
-  clip-path:polygon(7% 0,100% 0,93% 100%,0 100%);
-}
-
-.mobile-menu{
-  display:none;
-  color:var(--green);
-  font-size:25px;
-}
-
-/* ================= HERO ================= */
-
-.hero{
-  min-height:720px;
-  display:grid;
-  align-items:center;
-  position:relative;
-  overflow:hidden;
-}
-
-.hero:before{
-  content:"";
-  position:absolute;
-  width:700px;
-  height:700px;
-  right:-250px;
-  top:-100px;
-  border:1px solid rgba(57,255,136,.10);
-  border-radius:50%;
-  box-shadow:
-    0 0 0 80px rgba(57,255,136,.025),
-    0 0 0 160px rgba(57,255,136,.015);
-}
-
-.hero-grid{
-  display:grid;
-  grid-template-columns:1.05fr .95fr;
-  gap:40px;
-  align-items:center;
-}
-
-.kicker{
-  display:inline-flex;
-  align-items:center;
-  gap:8px;
-  color:var(--green);
-  font-family:Orbitron,sans-serif;
-  font-size:11px;
-  letter-spacing:2px;
-  border:1px solid var(--line);
-  background:rgba(57,255,136,.04);
-  padding:9px 14px;
-  margin-bottom:22px;
-}
-
-.dot{
-  width:7px;
-  height:7px;
-  background:var(--green);
-  border-radius:50%;
-  box-shadow:0 0 12px var(--green);
-}
-
-.hero h1{
-  font-family:Orbitron,sans-serif;
-  font-size:clamp(44px,7vw,88px);
-  line-height:.95;
-  letter-spacing:-4px;
-  margin-bottom:18px;
-}
-
-.hero h1 span{
-  color:var(--green);
-  text-shadow:0 0 35px rgba(57,255,136,.35);
-}
-
-.hero h2{
-  font-family:Orbitron,sans-serif;
-  font-size:clamp(15px,2vw,23px);
-  letter-spacing:3px;
-  color:#d9ffe6;
-  margin-bottom:18px;
-}
-
-.hero p{
-  max-width:650px;
-  color:#8da99a;
-  font-size:18px;
-  line-height:1.55;
-}
-
-.hero-actions{
-  display:flex;
-  flex-wrap:wrap;
-  gap:12px;
-  margin-top:30px;
-}
-
-.btn{
-  padding:14px 22px;
-  border:1px solid var(--green);
-  color:var(--green);
-  background:rgba(57,255,136,.05);
-  font-family:Orbitron,sans-serif;
-  font-size:11px;
-  letter-spacing:1px;
-  cursor:pointer;
-  transition:.25s;
-}
-
-.btn:hover{
-  background:var(--green);
-  color:#00150a;
-  box-shadow:0 0 30px rgba(57,255,136,.25);
-}
-
-.btn.secondary{
-  border-color:#284837;
-  color:#a4b9ad;
-}
-
-.hero-card{
-  position:relative;
-  min-height:450px;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-}
-
-.nexus{
-  width:360px;
-  height:360px;
-  border:1px solid rgba(57,255,136,.25);
-  border-radius:50%;
-  position:relative;
-  display:grid;
-  place-items:center;
-  box-shadow:
-    0 0 80px rgba(57,255,136,.08),
-    inset 0 0 80px rgba(57,255,136,.04);
-}
-
-.nexus:before,
-.nexus:after{
-  content:"";
-  position:absolute;
-  border:1px solid rgba(57,255,136,.18);
-  border-radius:50%;
-}
-
-.nexus:before{
-  inset:35px;
-}
-
-.nexus:after{
-  inset:90px;
-}
-
-.nexus-logo{
-  width:150px;
-  height:110px;
-  display:grid;
-  place-items:center;
-  background:var(--green);
-  color:#00150a;
-  font-family:Orbitron,sans-serif;
-  font-size:48px;
-  font-weight:900;
-  font-style:italic;
-  transform:skew(-12deg);
-  clip-path:polygon(10% 0,100% 0,90% 100%,0 100%);
-  box-shadow:0 0 60px rgba(57,255,136,.25);
-}
-
-.nexus-code{
-  position:absolute;
-  color:var(--green);
-  font-family:Orbitron,sans-serif;
-  font-size:9px;
-  letter-spacing:3px;
-}
-
-.code-top{top:30px}
-.code-bottom{bottom:30px}
-
-/* ================= STATUS ================= */
-
-.status-grid{
-  display:grid;
-  grid-template-columns:repeat(5,1fr);
-  border:1px solid var(--line);
-  background:rgba(3,15,9,.75);
-}
-
-.status{
-  min-height:100px;
-  padding:22px;
-  border-right:1px solid var(--line);
-}
-
-.status:last-child{
-  border-right:0;
-}
-
-.status small{
-  display:block;
-  color:#617a6c;
-  font-family:Orbitron,sans-serif;
-  font-size:9px;
-  letter-spacing:1px;
-  margin-bottom:10px;
-}
-
-.status strong{
-  display:block;
-  color:var(--green);
-  font-family:Orbitron,sans-serif;
-  font-size:20px;
-}
-
-/* ================= SECTIONS ================= */
-
-section{
-  padding:100px 0;
-}
-
-.section-head{
-  display:flex;
-  justify-content:space-between;
-  gap:30px;
-  align-items:end;
-  margin-bottom:40px;
-}
-
-.section-number{
-  color:var(--green);
-  font-family:Orbitron,sans-serif;
-  font-size:10px;
-  letter-spacing:2px;
-  margin-bottom:12px;
-}
-
-.section-head h2{
-  font-family:Orbitron,sans-serif;
-  font-size:clamp(28px,5vw,52px);
-  letter-spacing:-2px;
-}
-
-.section-head p{
-  max-width:500px;
-  color:var(--muted);
-  line-height:1.5;
-}
-
-/* ================= COLLECTION ================= */
-
-.gallery{
-  display:grid;
-  grid-template-columns:repeat(5,1fr);
-  gap:14px;
-}
-
-.nft-card{
-  border:1px solid var(--line);
-  background:#030d08;
-  overflow:hidden;
-  transition:.25s;
-}
-
-.nft-card:hover{
-  transform:translateY(-5px);
-  border-color:var(--green);
-  box-shadow:0 15px 40px rgba(0,0,0,.4);
-}
-
-.nft-image{
-  width:100%;
-  aspect-ratio:1/1;
-  object-fit:cover;
-  display:block;
-  background:
-    radial-gradient(circle,rgba(57,255,136,.08),transparent 60%),
-    #020806;
-}
-
-.nft-info{
-  padding:13px;
-}
-
-.nft-id{
-  color:var(--green);
-  font-family:Orbitron,sans-serif;
-  font-size:13px;
-}
-
-.nft-name{
-  color:#789889;
-  font-size:12px;
-  margin-top:4px;
-}
-
-.collection-note{
-  margin-top:20px;
-  padding:18px;
-  border:1px solid var(--line2);
-  color:#698475;
-  text-align:center;
-}
-
-/* ================= MINT ================= */
-
-.mint-grid{
-  display:grid;
-  grid-template-columns:1.2fr .8fr;
-  gap:20px;
-}
-
-.panel{
-  border:1px solid var(--line);
-  background:linear-gradient(145deg,rgba(8,31,20,.9),rgba(2,10,7,.9));
-  padding:25px;
-}
-
-.panel-title{
-  color:var(--green);
-  font-family:Orbitron,sans-serif;
-  font-size:11px;
-  letter-spacing:2px;
-  margin-bottom:20px;
-}
-
-.allocation-row{
-  display:grid;
-  grid-template-columns:120px 1fr 90px 60px;
-  gap:12px;
-  align-items:center;
-  padding:15px 0;
-  border-bottom:1px solid var(--line2);
-}
-
-.allocation-row:last-child{
-  border-bottom:0;
-}
-
-.allocation-label{
-  font-weight:700;
-}
-
-.bar{
-  height:7px;
-  background:#0b2618;
-  overflow:hidden;
-}
-
-.bar i{
-  display:block;
-  height:100%;
-  background:var(--green);
-}
-
-.percent{
-  color:var(--green);
-  text-align:right;
-  font-family:Orbitron,sans-serif;
-}
-
-.amount{
-  color:#8ba598;
-  text-align:right;
-  font-family:Orbitron,sans-serif;
-  font-size:11px;
-}
-
-.price-list{
-  display:grid;
-  gap:12px;
-}
-
-.price{
-  padding:18px;
-  border:1px solid var(--line2);
-  display:flex;
-  justify-content:space-between;
-  gap:15px;
-}
-
-.price span:first-child{
-  color:#94aa9e;
-}
-
-.price strong{
-  color:var(--green);
-  font-family:Orbitron,sans-serif;
-}
-
-.price.private strong{color:var(--purple)}
-.price.gtd strong{color:var(--pink)}
-.price.public strong{color:var(--cyan)}
-
-.revenue{
-  margin-top:20px;
-  padding:20px;
-  border:1px solid var(--line);
-}
-
-.revenue small{
-  color:#678173;
-}
-
-.revenue strong{
-  display:block;
-  font-family:Orbitron,sans-serif;
-  color:var(--green);
-  font-size:30px;
-  margin:5px 0;
-}
-
-/* ================= TOKEN ================= */
-
-.token-layout{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:20px;
-}
-
-.token-total{
-  text-align:center;
-  padding:40px 20px;
-  border:1px solid var(--line);
-  margin-bottom:20px;
-}
-
-.token-total small{
-  color:#708b7d;
-  font-family:Orbitron,sans-serif;
-  letter-spacing:2px;
-}
-
-.token-total strong{
-  display:block;
-  font-family:Orbitron,sans-serif;
-  font-size:42px;
-  color:var(--green);
-  margin:12px 0;
-}
-
-.token-total span{
-  color:#738d80;
-}
-
-.token-row{
-  display:grid;
-  grid-template-columns:1fr 70px 50px;
-  gap:10px;
-  align-items:center;
-  padding:13px 0;
-  border-bottom:1px solid var(--line2);
-}
-
-.token-row:last-child{
-  border-bottom:0;
-}
-
-.token-row b{
-  color:#d8e9df;
-}
-
-.token-row .tbar{
-  height:6px;
-  background:#0b2417;
-}
-
-.token-row .tbar i{
-  height:100%;
-  display:block;
-  background:var(--green);
-}
-
-.token-row strong{
-  color:var(--green);
-  text-align:right;
-}
-
-/* ================= STAKING ================= */
-
-.stake-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:18px;
-}
-
-.stake-card{
-  padding:28px;
-  border:1px solid var(--line);
-  background:rgba(4,20,12,.8);
-}
-
-.stake-card .big{
-  font-family:Orbitron,sans-serif;
-  font-size:38px;
-  color:var(--green);
-  margin-bottom:12px;
-}
-
-.stake-card h3{
-  font-family:Orbitron,sans-serif;
-  font-size:14px;
-  margin-bottom:12px;
-}
-
-.stake-card p{
-  color:#769083;
-  line-height:1.5;
-}
-
-.stake-flow{
-  margin-top:25px;
-  border:1px solid var(--line);
-  padding:20px;
-  text-align:center;
-  font-family:Orbitron,sans-serif;
-  color:var(--green);
-  letter-spacing:2px;
-}
-
-/* ================= ROADMAP ================= */
-
-.timeline{
-  position:relative;
-  max-width:900px;
-  margin:auto;
-}
-
-.timeline:before{
-  content:"";
-  position:absolute;
-  left:18px;
-  top:0;
-  bottom:0;
-  width:1px;
-  background:var(--line);
-}
-
-.phase{
-  position:relative;
-  padding-left:60px;
-  padding-bottom:45px;
-}
-
-.phase:last-child{
-  padding-bottom:0;
-}
-
-.phase-dot{
-  position:absolute;
-  left:10px;
-  top:2px;
-  width:17px;
-  height:17px;
-  border:1px solid var(--green);
-  background:var(--bg);
-  box-shadow:0 0 15px rgba(57,255,136,.4);
-}
-
-.phase h3{
-  font-family:Orbitron,sans-serif;
-  color:var(--green);
-  font-size:13px;
-  margin-bottom:8px;
-}
-
-.phase h4{
-  font-size:21px;
-  margin-bottom:8px;
-}
-
-.phase p{
-  color:#708a7c;
-}
-
-/* ================= WHY ================= */
-
-.features{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:15px;
-}
-
-.feature{
-  border:1px solid var(--line);
-  padding:25px;
-}
-
-.feature-icon{
-  color:var(--green);
-  font-family:Orbitron,sans-serif;
-  font-size:25px;
-  margin-bottom:18px;
-}
-
-.feature h3{
-  font-family:Orbitron,sans-serif;
-  font-size:13px;
-  margin-bottom:10px;
-}
-
-.feature p{
-  color:#708b7d;
-  line-height:1.5;
-}
-
-/* ================= DOCS ================= */
-
-.docs{
-  display:grid;
-  grid-template-columns:250px 1fr;
-  gap:20px;
-}
-
-.docs-nav{
-  position:sticky;
-  top:95px;
-  align-self:start;
-  border:1px solid var(--line);
-  padding:15px;
-}
-
-.docs-nav a{
-  display:block;
-  padding:12px;
-  color:#769083;
-  border-bottom:1px solid var(--line2);
-  font-family:Orbitron,sans-serif;
-  font-size:10px;
-}
-
-.docs-nav a:hover{
-  color:var(--green);
-  background:rgba(57,255,136,.04);
-}
-
-.doc-content{
-  border:1px solid var(--line);
-  padding:35px;
-  background:rgba(3,15,9,.6);
-}
-
-.doc-content article{
-  scroll-margin-top:100px;
-  padding-bottom:45px;
-  margin-bottom:45px;
-  border-bottom:1px solid var(--line2);
-}
-
-.doc-content article:last-child{
-  border-bottom:0;
-  margin-bottom:0;
-}
-
-.doc-content h3{
-  font-family:Orbitron,sans-serif;
-  color:var(--green);
-  margin-bottom:15px;
-  font-size:18px;
-}
-
-.doc-content p,
-.doc-content li{
-  color:#829b8e;
-  line-height:1.7;
-}
-
-.doc-content ul{
-  padding-left:20px;
-  margin-top:12px;
-}
-
-.notice{
-  padding:18px;
-  border-left:2px solid var(--green);
-  background:rgba(57,255,136,.04);
-  margin-top:20px;
-  color:#9bb5a7;
-}
-
-/* ================= FAQ ================= */
-
-.faq{
-  max-width:900px;
-  margin:auto;
-}
-
-details{
-  border:1px solid var(--line);
-  margin-bottom:10px;
-  background:rgba(4,20,12,.65);
-}
-
-summary{
-  cursor:pointer;
-  padding:20px;
-  font-family:Orbitron,sans-serif;
-  font-size:12px;
-  color:#cfe6d8;
-}
-
-details p{
-  padding:0 20px 20px;
-  color:#789285;
-  line-height:1.6;
-}
-
-/* ================= FOOTER ================= */
-
-footer{
-  border-top:1px solid var(--line);
-  padding:50px 0 25px;
-  background:#010604;
-}
-
-.footer-grid{
-  display:grid;
-  grid-template-columns:1.5fr 1fr 1fr 1fr;
-  gap:30px;
-}
-
-.footer-brand{
-  font-family:Orbitron,sans-serif;
-  font-size:22px;
-  color:var(--green);
-  margin-bottom:10px;
-}
-
-footer p{
-  color:#62796d;
-  line-height:1.5;
-}
-
-footer h4{
-  color:#bde8cb;
-  font-family:Orbitron,sans-serif;
-  font-size:11px;
-  margin-bottom:15px;
-}
-
-footer a{
-  display:block;
-  color:#61796c;
-  margin:9px 0;
-  font-size:14px;
-}
-
-footer a:hover{
-  color:var(--green);
-}
-
-.disclaimer{
-  margin-top:40px;
-  padding:20px;
-  border:1px solid rgba(255,181,46,.2);
-  color:#8b8063;
-  font-size:12px;
-  line-height:1.6;
-}
-
-.copyright{
-  border-top:1px solid var(--line2);
-  margin-top:30px;
-  padding-top:20px;
-  color:#40584b;
-  font-size:12px;
-  display:flex;
-  justify-content:space-between;
-}
-
-/* ================= RESPONSIVE ================= */
-
-@media(max-width:950px){
-
-  .nav-links{
-    display:none;
-  }
-
-  .mobile-menu{
-    display:block;
-  }
-
-  .hero{
-    min-height:auto;
-    padding:80px 0;
-  }
-
-  .hero-grid{
-    grid-template-columns:1fr;
-  }
-
-  .hero-card{
-    min-height:350px;
-  }
-
-  .status-grid{
-    grid-template-columns:repeat(2,1fr);
-  }
-
-  .status{
-    border-bottom:1px solid var(--line);
-  }
-
-  .gallery{
-    grid-template-columns:repeat(3,1fr);
-  }
-
-  .mint-grid,
-  .token-layout{
-    grid-template-columns:1fr;
-  }
-
-  .features{
-    grid-template-columns:repeat(2,1fr);
-  }
-
-  .docs{
-    grid-template-columns:1fr;
-  }
-
-  .docs-nav{
-    position:static;
-  }
-
-  .footer-grid{
-    grid-template-columns:repeat(2,1fr);
-  }
-}
-
-@media(max-width:600px){
-
-  section{
-    padding:70px 0;
-  }
-
-  .container{
-    width:94%;
-  }
-
-  .brand-name{
-    font-size:13px;
-  }
-
-  .brand-sub{
-    display:none;
-  }
-
-  .nav-btn{
-    display:none;
-  }
-
-  .hero h1{
-    font-size:44px;
-    letter-spacing:-3px;
-  }
-
-  .hero p{
-    font-size:16px;
-  }
-
-  .nexus{
-    width:280px;
-    height:280px;
-  }
-
-  .nexus-logo{
-    width:115px;
-    height:85px;
-    font-size:35px;
-  }
-
-  .status-grid{
-    grid-template-columns:1fr 1fr;
-  }
-
-  .status{
-    padding:16px;
-  }
-
-  .status strong{
-    font-size:15px;
-  }
-
-  .gallery{
-    grid-template-columns:repeat(2,1fr);
-  }
-
-  .section-head{
-    display:block;
-  }
-
-  .section-head p{
-    margin-top:15px;
-  }
-
-  .allocation-row{
-    grid-template-columns:1fr 60px;
-  }
-
-  .allocation-row .bar{
-    grid-column:1 / 3;
-  }
-
-  .allocation-row .amount{
-    display:none;
-  }
-
-  .stake-grid,
-  .features{
-    grid-template-columns:1fr;
-  }
-
-  .doc-content{
-    padding:22px;
-  }
-
-  .footer-grid{
-    grid-template-columns:1fr;
-  }
-
-  .copyright{
-    display:block;
-  }
-
-  .copyright span{
-    display:block;
-    margin-top:8px;
-  }
-}
-</style>
 </head>
 
 <body>
 
-<!-- ================= HEADER ================= -->
+<div id="loader">
+
+<div class="loader-logo">
+
+<img src="logo.png">
+
+<h1>NEON/ZERO</h1>
+
+<p>ENTER THE SIGNAL</p>
+
+</div>
+
+</div>
+
+<div id="particles"></div>
 
 <header>
-  <div class="container nav">
 
-    <a href="#home" class="brand">
-      <div class="logo">N/Z</div>
+<nav class="navbar">
 
-      <div>
-        <div class="brand-name">NEON<span>//</span>ZERO</div>
-        <div class="brand-sub">THE EXECUTORS OF DIGITAL REALM</div>
-      </div>
-    </a>
+<div class="logo">
 
-    <nav class="nav-links">
-      <a href="#collection">COLLECTION</a>
-      <a href="#mint">MINT</a>
-      <a href="#utility">UTILITY</a>
-      <a href="#zeros">$ZEROS</a>
-      <a href="#tokenomics">TOKENOMICS</a>
-      <a href="#roadmap">ROADMAP</a>
-      <a href="#faq">FAQ</a>
-      <a href="#docs">DOCS</a>
-    </nav>
+<img src="logo.png">
 
-    <a href="#docs" class="nav-btn">JOIN NETWORK</a>
+<span>NEON/ZERO</span>
 
-    <div class="mobile-menu">☰</div>
+</div>
 
-  </div>
+<ul>
+
+<li><a href="#home">HOME</a></li>
+
+<li><a href="#about">ABOUT</a></li>
+
+<li><a href="#collection">COLLECTION</a></li>
+
+<li><a href="#rarity">RARITY</a></li>
+
+<li><a href="#roadmap">ROADMAP</a></li>
+
+<li><a href="#ecosystem">ECOSYSTEM</a></li>
+
+</ul>
+
+<a href="#mint" class="btn">ENTER</a>
+
+</nav>
+
 </header>
 
-
-<!-- ================= HERO ================= -->
-
-<main>
-
 <section class="hero" id="home">
-  <div class="container hero-grid">
 
-    <div>
+<div class="overlay"></div>
 
-      <div class="kicker">
-        <span class="dot"></span>
-        BUILT ON ROBINCHAIN
-      </div>
+<div class="hero-content">
 
-      <h1>
-        NEON<span>//</span>ZERO
-      </h1>
+<h1>ENTER THE SIGNAL</h1>
 
-      <h2>THE EXECUTORS OF DIGITAL REALM</h2>
+<p>
 
-      <p>
-        A fixed collection of 5,000 unique digital identities.
-        Each Executor exists as an individual entity inside the
-        NEON//ZERO digital realm.
-      </p>
+5,000 Cyberpunk NFTs
 
-      <div class="hero-actions">
-        <a href="#collection" class="btn">EXPLORE COLLECTION</a>
-        <a href="#docs" class="btn secondary">READ DOCUMENTATION</a>
-      </div>
+Built for the future.
 
-    </div>
+Designed for the Zero Network.
 
-    <div class="hero-card">
+</p>
 
-      <div class="nexus">
+<div class="hero-buttons">
 
-        <div class="code-top nexus-code">
-          N/Z_PROTOCOL // ONLINE
-        </div>
+<a href="#collection" class="btn">Explore</a>
 
-        <div class="nexus-logo">
-          N/Z
-        </div>
+<a href="#about" class="btn-outline">Documentation</a>
 
-        <div class="code-bottom nexus-code">
-          SYSTEM STATUS // ACTIVE
-        </div>
+</div>
 
-      </div>
+</div>
 
-    </div>
+<div class="hero-image">
 
-  </div>
+<img src="hero.png">
+
+</div>
+
 </section>
 
+<section id="about">
 
-<!-- ================= STATUS ================= -->
+<div class="container">
 
-<section style="padding:0 0 30px;">
-  <div class="container">
+<h2>ABOUT NEON/ZERO</h2>
 
-    <div class="status-grid">
+<p>
 
-      <div class="status">
-        <small>TOTAL SUPPLY</small>
-        <strong>5,000</strong>
-      </div>
+NEON/ZERO is a futuristic cyberpunk NFT collection built around
 
-      <div class="status">
-        <small>TOKEN IDS</small>
-        <strong>#0001–#5000</strong>
-      </div>
+structured rarity, trait generation,
 
-      <div class="status">
-        <small>BLOCKCHAIN</small>
-        <strong>RobinChain</strong>
-      </div>
+and a premium digital identity.
 
-      <div class="status">
-        <small>CONTRACT</small>
-        <strong>TBA</strong>
-      </div>
+</p>
 
-      <div class="status">
-        <small>STATUS</small>
-        <strong>PLANNED</strong>
-      </div>
+<div class="cards">
 
-    </div>
+<div class="card">
 
-  </div>
+<i class="fa-solid fa-layer-group"></i>
+
+<h3>5,000 NFTs</h3>
+
+<p>Fixed Supply</p>
+
+</div>
+
+<div class="card">
+
+<i class="fa-solid fa-shield-halved"></i>
+
+<h3>Unique Traits</h3>
+
+<p>No duplicate combinations.</p>
+
+</div>
+
+<div class="card">
+
+<i class="fa-solid fa-bolt"></i>
+
+<h3>Future Ecosystem</h3>
+
+<p>$ZEROS Planned</p>
+
+</div>
+
+</div>
+
+</div>
+
 </section>
-
-
-<!-- ================= COLLECTION ================= -->
 
 <section id="collection">
 
 <div class="container">
 
-  <div class="section-head">
+<h2>COLLECTION</h2>
 
-    <div>
-      <div class="section-number">01 — COLLECTION</div>
-      <h2>THE EXECUTORS.</h2>
-    </div>
+<div class="grid">
 
-    <p>
-      5,000 unique NEON//ZERO NFTs built from a structured
-      trait system. Each token represents an individual
-      Executor with its own identity and metadata.
-    </p>
+<div class="box">
 
-  </div>
+<h3>Supply</h3>
 
-
-  <div class="gallery">
-
-    <a class="nft-card" href="images/0001.png" target="_blank">
-      <img class="nft-image" src="images/0001.png" alt="NEON//ZERO #0001">
-      <div class="nft-info">
-        <div class="nft-id">#0001</div>
-        <div class="nft-name">N//Z · EXECUTOR</div>
-      </div>
-    </a>
-
-    <a class="nft-card" href="images/0002.png" target="_blank">
-      <img class="nft-image" src="images/0002.png" alt="NEON//ZERO #0002">
-      <div class="nft-info">
-        <div class="nft-id">#0002</div>
-        <div class="nft-name">N//Z · EXECUTOR</div>
-      </div>
-    </a>
-
-    <a class="nft-card" href="images/0005.png" target="_blank">
-      <img class="nft-image" src="images/0005.png" alt="NEON//ZERO #0005">
-      <div class="nft-info">
-        <div class="nft-id">#0005</div>
-        <div class="nft-name">N//Z · EXECUTOR</div>
-      </div>
-    </a>
-
-    <a class="nft-card" href="images/0006.png" target="_blank">
-      <img class="nft-image" src="images/0006.png" alt="NEON//ZERO #0006">
-      <div class="nft-info">
-        <div class="nft-id">#0006</div>
-        <div class="nft-name">N//Z · EXECUTOR</div>
-      </div>
-    </a>
-
-    <a class="nft-card" href="images/0010.png" target="_blank">
-      <img class="nft-image" src="images/0010.png" alt="NEON//ZERO #0010">
-      <div class="nft-info">
-        <div class="nft-id">#0010</div>
-        <div class="nft-name">N//Z · EXECUTOR</div>
-      </div>
-    </a>
-
-    <a class="nft-card" href="images/0012.png" target="_blank">
-      <img class="nft-image" src="images/0012.png" alt="NEON//ZERO #0012">
-      <div class="nft-info">
-        <div class="nft-id">#0012</div>
-        <div class="nft-name">N//Z · EXECUTOR</div>
-      </div>
-    </a>
-
-    <a class="nft-card" href="images/0013.png" target="_blank">
-      <img class="nft-image" src="images/0013.png" alt="NEON//ZERO #0013">
-      <div class="nft-info">
-        <div class="nft-id">#0013</div>
-        <div class="nft-name">N//Z · EXECUTOR</div>
-      </div>
-    </a>
-
-    <a class="nft-card" href="images/0750.png" target="_blank">
-      <img class="nft-image" src="images/0750.png" alt="NEON//ZERO #0750">
-      <div class="nft-info">
-        <div class="nft-id">#0750</div>
-        <div class="nft-name">N//Z · EXECUTOR</div>
-      </div>
-    </a>
-
-    <a class="nft-card" href="images/1500.png" target="_blank">
-      <img class="nft-image" src="images/1500.png" alt="NEON//ZERO #1500">
-      <div class="nft-info">
-        <div class="nft-id">#1500</div>
-        <div class="nft-name">N//Z · EXECUTOR</div>
-      </div>
-    </a>
-
-    <a class="nft-card" href="images/5000.png" target="_blank">
-      <img class="nft-image" src="images/5000.png" alt="NEON//ZERO #5000">
-      <div class="nft-info">
-        <div class="nft-id">#5000</div>
-        <div class="nft-name">N//Z · EXECUTOR</div>
-      </div>
-    </a>
-
-  </div>
-
-  <div class="collection-note">
-    5,000 UNIQUE EXECUTORS · #0001 — #5000
-  </div>
+<h1>5,000</h1>
 
 </div>
-</section>
 
+<div class="box">
 
-<!-- ================= MINT ================= -->
+<h3>Token IDs</h3>
 
-<section id="mint">
+<h1>#0001 - #5000</h1>
+
+</div>
+
+<div class="box">
+
+<h3>Generation</h3>
+
+<h1>Trait Based</h1>
+
+</div>
+
+<div class="box">
+
+<h3>Theme</h3>
+
+<h1>Cyberpunk</h1>
+
+</div>
+
+</div>
+
+</div>
+
+<section id="rarity">
 
 <div class="container">
 
-  <div class="section-head">
+<h2>RARITY DISTRIBUTION</h2>
 
-    <div>
-      <div class="section-number">02 — MINT</div>
-      <h2>ENTER THE NETWORK.</h2>
-    </div>
+<div class="rarity-grid">
 
-    <p>
-      Current planning allocation for the fixed 5,000 NFT supply.
-      Official contract and launch timing remain TBA.
-    </p>
+<div class="rarity common">
+<h3>COMMON</h3>
+<span>3,000</span>
+<p>60%</p>
+</div>
 
-  </div>
+<div class="rarity uncommon">
+<h3>UNCOMMON</h3>
+<span>1,250</span>
+<p>25%</p>
+</div>
 
+<div class="rarity rare">
+<h3>RARE</h3>
+<span>500</span>
+<p>10%</p>
+</div>
 
-  <div class="mint-grid">
+<div class="rarity epic">
+<h3>EPIC</h3>
+<span>200</span>
+<p>4%</p>
+</div>
 
-    <div class="panel">
-
-      <div class="panel-title">
-        MINT ALLOCATION — 5,000
-      </div>
-
-      <div class="allocation-row">
-        <div class="allocation-label">GENESIS</div>
-        <div class="bar"><i style="width:2%"></i></div>
-        <div class="percent">2%</div>
-        <div class="amount">100</div>
-      </div>
-
-      <div class="allocation-row">
-        <div class="allocation-label">GTD</div>
-        <div class="bar"><i style="width:18%"></i></div>
-        <div class="percent">18%</div>
-        <div class="amount">900</div>
-      </div>
-
-      <div class="allocation-row">
-        <div class="allocation-label">PUBLIC</div>
-        <div class="bar"><i style="width:70%"></i></div>
-        <div class="percent">70%</div>
-        <div class="amount">3,500</div>
-      </div>
-
-      <div class="allocation-row">
-        <div class="allocation-label">PRIVATE</div>
-        <div class="bar"><i style="width:8%"></i></div>
-        <div class="percent">8%</div>
-        <div class="amount">400</div>
-      </div>
-
-      <div class="allocation-row">
-        <div class="allocation-label">RESERVE</div>
-        <div class="bar"><i style="width:2%"></i></div>
-        <div class="percent">2%</div>
-        <div class="amount">100</div>
-      </div>
-
-    </div>
-
-
-    <div class="panel">
-
-      <div class="panel-title">
-        MINT PRICE
-      </div>
-
-      <div class="price-list">
-
-        <div class="price private">
-          <span>PRIVATE SEED</span>
-          <strong>0.020 ETH</strong>
-        </div>
-
-        <div class="price gtd">
-          <span>GTD — GUARANTEED</span>
-          <strong>0.025 ETH</strong>
-        </div>
-
-        <div class="price public">
-          <span>PUBLIC MINT</span>
-          <strong>0.045 ETH</strong>
-        </div>
-
-      </div>
-
-      <div class="revenue">
-        <small>PLANNED PRIMARY SALE FROM GTD + PUBLIC</small>
-        <strong>188 ETH</strong>
-        <small>
-          (900 × 0.020 ETH) + (3,500 × 0.045 ETH)
-          = 175.5 ETH from those two categories alone;
-          private seed is separately allocated.
-        </small>
-      </div>
-
-    </div>
-
-  </div>
+<div class="rarity legendary">
+<h3>LEGENDARY</h3>
+<span>50</span>
+<p>1%</p>
+</div>
 
 </div>
+
+</div>
+
 </section>
 
-
-<!-- ================= UTILITY ================= -->
-
-<section id="utility">
+<section id="traits">
 
 <div class="container">
 
-  <div class="section-head">
+<h2>TRAIT SYSTEM</h2>
 
-    <div>
-      <div class="section-number">03 — NFT UTILITY</div>
-      <h2>IDENTITY HAS PURPOSE.</h2>
-    </div>
+<div class="traits">
 
-    <p>
-      N//Z is designed as more than a static collectible.
-      Utility is planned around ownership, participation,
-      staking and future ecosystem access.
-    </p>
-
-  </div>
-
-
-  <div class="features">
-
-    <div class="feature">
-      <div class="feature-icon">01</div>
-      <h3>IDENTITY</h3>
-      <p>
-        Every Executor has an individual token ID,
-        visual identity and metadata.
-      </p>
-    </div>
-
-    <div class="feature">
-      <div class="feature-icon">02</div>
-      <h3>HOLDER ACCESS</h3>
-      <p>
-        NFT ownership can act as a gateway for future
-        community activities and ecosystem programs.
-      </p>
-    </div>
-
-    <div class="feature">
-      <div class="feature-icon">03</div>
-      <h3>STAKING</h3>
-      <p>
-        Eligible holders may participate in the planned
-        NFT staking and reward system.
-      </p>
-    </div>
-
-    <div class="feature">
-      <div class="feature-icon">04</div>
-      <h3>ECOSYSTEM</h3>
-      <p>
-        N//Z is designed to connect NFT identity with
-        the wider $ZEROS ecosystem.
-      </p>
-    </div>
-
-  </div>
+<div class="trait">Character Base</div>
+<div class="trait">Hair</div>
+<div class="trait">Eyes</div>
+<div class="trait">Expression</div>
+<div class="trait">Mask</div>
+<div class="trait">Outfit</div>
+<div class="trait">Headgear</div>
+<div class="trait">Accessories</div>
+<div class="trait">Background</div>
+<div class="trait">Neon Color</div>
+<div class="trait">Effects</div>
 
 </div>
+
+</div>
+
 </section>
 
-
-<!-- ================= ZEROS ================= -->
-
-<section id="zeros">
+<section id="allocation">
 
 <div class="container">
 
-  <div class="section-head">
+<h2>NFT ALLOCATION</h2>
 
-    <div>
-      <div class="section-number">04 — $ZEROS</div>
-      <h2>THE NETWORK TOKEN.</h2>
-    </div>
+<table>
 
-    <p>
-      $ZEROS is the planned ecosystem token associated with
-      NEON//ZERO and its future utility layer.
-    </p>
+<thead>
 
-  </div>
+<tr>
 
+<th>Allocation</th>
 
-  <div class="token-layout">
+<th>NFT</th>
 
-    <div>
+<th>Status</th>
 
-      <div class="token-total">
-        <small>MAXIMUM SUPPLY</small>
-        <strong>1,000,000,000</strong>
-        <span>$ZEROS</span>
-      </div>
+</tr>
 
-      <div class="panel">
+</thead>
 
-        <div class="panel-title">
-          TOKEN ALLOCATION
-        </div>
+<tbody>
 
-        <div class="token-row">
-          <b>Community & Ecosystem</b>
-          <div class="tbar"><i style="width:30%"></i></div>
-          <strong>30%</strong>
-        </div>
+<tr>
 
-        <div class="token-row">
-          <b>Treasury</b>
-          <div class="tbar"><i style="width:20%"></i></div>
-          <strong>20%</strong>
-        </div>
+<td>Genesis</td>
 
-        <div class="token-row">
-          <b>NFT Staking</b>
-          <div class="tbar"><i style="width:15%"></i></div>
-          <strong>15%</strong>
-        </div>
+<td>100</td>
 
-        <div class="token-row">
-          <b>Private / Stake</b>
-          <div class="tbar"><i style="width:10%"></i></div>
-          <strong>10%</strong>
-        </div>
+<td>FREE</td>
 
-        <div class="token-row">
-          <b>Team & Core Contributors</b>
-          <div class="tbar"><i style="width:10%"></i></div>
-          <strong>10%</strong>
-        </div>
+</tr>
 
-        <div class="token-row">
-          <b>Liquidity</b>
-          <div class="tbar"><i style="width:7%"></i></div>
-          <strong>7%</strong>
-        </div>
+<tr>
 
-        <div class="token-row">
-          <b>Advisors & Partners</b>
-          <div class="tbar"><i style="width:5%"></i></div>
-          <strong>5%</strong>
-        </div>
+<td>Guaranteed</td>
 
-        <div class="token-row">
-          <b>Marketing</b>
-          <div class="tbar"><i style="width:3%"></i></div>
-          <strong>3%</strong>
-        </div>
+<td>900</td>
 
-      </div>
+<td>0.025 ETH</td>
 
-    </div>
+</tr>
 
+<tr>
 
-    <div class="panel">
+<td>Public Mint</td>
 
-      <div class="panel-title">
-        $ZEROS ROLE
-      </div>
+<td>3500</td>
 
-      <h3 style="font-family:Orbitron;margin-bottom:15px;">
-        ONE TOKEN. MULTIPLE SYSTEMS.
-      </h3>
+<td>0.045 ETH</td>
 
-      <p style="color:#789285;line-height:1.7;">
-        $ZEROS is planned as the utility layer for the
-        NEON//ZERO ecosystem. Its future role may include
-        staking rewards, ecosystem participation,
-        community programs and other functions defined
-        by official project rules.
-      </p>
+</tr>
 
-      <div class="notice">
-        $ZEROS is currently presented as a PLANNED ecosystem
-        token. Contract address, launch date and final
-        implementation are TBA.
-      </div>
+<tr>
 
-    </div>
+<td>Private Seed</td>
 
-  </div>
+<td>400</td>
+
+<td>0.020 ETH</td>
+
+</tr>
+
+<tr>
+
+<td>Reserve</td>
+
+<td>100</td>
+
+<td>Locked</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 </div>
+
 </section>
-
-
-<!-- ================= TOKENOMICS ================= -->
-
-<section id="tokenomics">
-
-<div class="container">
-
-  <div class="section-head">
-
-    <div>
-      <div class="section-number">05 — TOKENOMICS</div>
-      <h2>BUILT FOR THE NETWORK.</h2>
-    </div>
-
-    <p>
-      The allocation framework is designed to balance
-      ecosystem growth, treasury sustainability, liquidity,
-      contributors and holder participation.
-    </p>
-
-  </div>
-
-  <div class="features">
-
-    <div class="feature">
-      <div class="feature-icon">30%</div>
-      <h3>COMMUNITY</h3>
-      <p>
-        Community and ecosystem allocation.
-      </p>
-    </div>
-
-    <div class="feature">
-      <div class="feature-icon">20%</div>
-      <h3>TREASURY</h3>
-      <p>
-        Long-term ecosystem and project reserve.
-      </p>
-    </div>
-
-    <div class="feature">
-      <div class="feature-icon">15%</div>
-      <h3>NFT STAKING</h3>
-      <p>
-        Planned holder reward allocation.
-      </p>
-    </div>
-
-    <div class="feature">
-      <div class="feature-icon">10%</div>
-      <h3>CORE</h3>
-      <p>
-        Team and core contributor allocation.
-      </p>
-    </div>
-
-  </div>
-
-</div>
-</section>
-
-
-<!-- ================= STAKING ================= -->
-
-<section id="staking">
-
-<div class="container">
-
-  <div class="section-head">
-
-    <div>
-      <div class="section-number">06 — STAKING</div>
-      <h2>HOLD → STAKE → EARN.</h2>
-    </div>
-
-    <p>
-      A planned NFT staking framework connecting N//Z
-      ownership with the $ZEROS ecosystem.
-    </p>
-
-  </div>
-
-
-  <div class="stake-grid">
-
-    <div class="stake-card">
-      <div class="big">10%</div>
-      <h3>NFT STAKING REWARDS</h3>
-      <p>
-        Planned reward allocation for eligible NFT holders
-        who participate in the official staking program.
-      </p>
-    </div>
-
-    <div class="stake-card">
-      <div class="big">5%</div>
-      <h3>SPECIAL & COMMUNITY</h3>
-      <p>
-        Planned allocation for campaigns, achievements,
-        community events and special programs.
-      </p>
-    </div>
-
-    <div class="stake-card">
-      <div class="big">N/Z</div>
-      <h3>EXECUTOR PARTICIPATION</h3>
-      <p>
-        Holders become participants in the wider
-        NEON//ZERO ecosystem rather than passive observers.
-      </p>
-    </div>
-
-  </div>
-
-  <div class="stake-flow">
-    HOLD → STAKE → PARTICIPATE → EARN
-  </div>
-
-</div>
-</section>
-
-
-<!-- ================= ROADMAP ================= -->
 
 <section id="roadmap">
 
 <div class="container">
 
-  <div class="section-head">
+<h2>ROADMAP</h2>
 
-    <div>
-      <div class="section-number">07 — ROADMAP</div>
-      <h2>SYSTEM EVOLUTION.</h2>
-    </div>
+<div class="timeline">
 
-    <p>
-      Roadmap milestones are planned and may change as
-      development, ecosystem conditions and partnerships evolve.
-    </p>
+<div class="step">
 
-  </div>
+<h3>PHASE 0</h3>
 
-
-  <div class="timeline">
-
-    <div class="phase">
-      <div class="phase-dot"></div>
-      <h3>PHASE 01 · 2025 Q4</h3>
-      <h4>NFT COLLECTION LAUNCH</h4>
-      <p>
-        Finalize collection architecture, metadata,
-        website and initial ecosystem preparation.
-      </p>
-    </div>
-
-    <div class="phase">
-      <div class="phase-dot"></div>
-      <h3>PHASE 02 · 2026 Q1</h3>
-      <h4>THE ZERO NETWORK</h4>
-      <p>
-        Planned introduction of the $ZEROS ecosystem layer.
-      </p>
-    </div>
-
-    <div class="phase">
-      <div class="phase-dot"></div>
-      <h3>PHASE 03 · 2026 Q2</h3>
-      <h4>$ZEROS UTILITY</h4>
-      <p>
-        Planned utility expansion and ecosystem integration.
-      </p>
-    </div>
-
-    <div class="phase">
-      <div class="phase-dot"></div>
-      <h3>PHASE 04 · 2026 Q3–Q4</h3>
-      <h4>ECOSYSTEM EXPANSION</h4>
-      <p>
-        Community programs, partnerships and ecosystem growth.
-      </p>
-    </div>
-
-    <div class="phase">
-      <div class="phase-dot"></div>
-      <h3>PHASE 05 · 2027+</h3>
-      <h4>GLOBAL COLLABORATION</h4>
-      <p>
-        Expansion of the NEON//ZERO network and future
-        collaboration opportunities.
-      </p>
-    </div>
-
-  </div>
+<p>Finalize Trait System</p>
 
 </div>
+
+<div class="step">
+
+<h3>PHASE 1</h3>
+
+<p>Launch 5,000 NFTs</p>
+
+</div>
+
+<div class="step">
+
+<h3>PHASE 2</h3>
+
+<p>Expand Zero Network</p>
+
+</div>
+
+<div class="step">
+
+<h3>PHASE 3</h3>
+
+<p>Future Ecosystem</p>
+
+</div>
+
+</div>
+
+</div>
+
 </section>
 
-
-<!-- ================= WHY ROBINCHAIN ================= -->
-
-<section>
+<section id="ecosystem">
 
 <div class="container">
 
-  <div class="section-head">
+<h2>$ZEROS ECOSYSTEM</h2>
 
-    <div>
-      <div class="section-number">08 — INFRASTRUCTURE</div>
-      <h2>WHY ROBINCHAIN?</h2>
-    </div>
+<div class="ecosystem-box">
 
-    <p>
-      NEON//ZERO is planned to operate on RobinChain as
-      its blockchain environment.
-    </p>
+<h3>STATUS</h3>
 
-  </div>
+<h1>PLANNED</h1>
 
+<p>
 
-  <div class="features">
+Maximum Supply
 
-    <div class="feature">
-      <div class="feature-icon">R</div>
-      <h3>FAST</h3>
-      <p>
-        Designed around an efficient blockchain experience.
-      </p>
-    </div>
+<b>1,000,000,000 $ZEROS</b>
 
-    <div class="feature">
-      <div class="feature-icon">EVM</div>
-      <h3>COMPATIBLE</h3>
-      <p>
-        EVM-compatible infrastructure for broader tooling
-        and developer compatibility.
-      </p>
-    </div>
+</p>
 
-    <div class="feature">
-      <div class="feature-icon">SEC</div>
-      <h3>SECURE</h3>
-      <p>
-        Infrastructure focused on secure and decentralized
-        blockchain operation.
-      </p>
-    </div>
+<p>
 
-    <div class="feature">
-      <div class="feature-icon">N/Z</div>
-      <h3>BUILT FOR N/Z</h3>
-      <p>
-        The project identity remains centered on the N/Z
-        Executor ecosystem.
-      </p>
-    </div>
+NFT Reward Pool
 
-  </div>
+<b>150,000,000</b>
+
+</p>
+
+<p class="warning">
+
+NOT LIVE
+
+No contract has been deployed.
+
+</p>
 
 </div>
-</section>
-
-
-<!-- ================= FAQ ================= -->
-
-<section id="faq">
-
-<div class="container">
-
-  <div class="section-head">
-
-    <div>
-      <div class="section-number">09 — FAQ</div>
-      <h2>FREQUENTLY ASKED.</h2>
-    </div>
-
-  </div>
-
-
-  <div class="faq">
-
-    <details>
-      <summary>HOW MANY NFTS ARE IN NEON//ZERO?</summary>
-      <p>
-        The current planned collection supply is fixed at
-        5,000 unique NFTs, numbered #0001 through #5000.
-      </p>
-    </details>
-
-    <details>
-      <summary>WHAT IS N/Z?</summary>
-      <p>
-        N/Z is the core visual identity and shorthand for
-        NEON//ZERO. The Executors are the NFT identities
-        within the N/Z digital realm.
-      </p>
-    </details>
-
-    <details>
-      <summary>WHAT IS $ZEROS?</summary>
-      <p>
-        $ZEROS is the planned ecosystem token associated
-        with NEON//ZERO.
-      </p>
-    </details>
-
-    <details>
-      <summary>WHAT IS THE NFT MINT PRICE?</summary>
-      <p>
-        Current planning lists 0.020 ETH for Private Seed,
-        0.025 ETH for GTD and 0.045 ETH for Public Mint.
-        Final launch conditions remain TBA.
-      </p>
-    </details>
-
-    <details>
-      <summary>IS THE PROJECT LIVE?</summary>
-      <p>
-        The website presents the project as PLANNED.
-        Official contract addresses and launch timing are TBA.
-      </p>
-    </details>
-
-    <details>
-      <summary>WHERE ARE THE NFT IMAGES STORED?</summary>
-      <p>
-        For GitHub Pages, artwork should be uploaded into
-        the repository's images folder using sequential
-        filenames such as 0001.png through 5000.png.
-      </p>
-    </details>
-
-  </div>
 
 </div>
+
 </section>
-
-
-<!-- ================= DOCS ================= -->
-
-<section id="docs">
-
-<div class="container">
-
-  <div class="section-head">
-
-    <div>
-      <div class="section-number">10 — DOCUMENTATION</div>
-      <h2>N/Z DOCS.</h2>
-    </div>
-
-    <p>
-      Core project documentation is embedded directly into
-      this page so GitHub Pages does not depend on missing
-      external document files.
-    </p>
-
-  </div>
-
-
-  <div class="docs">
-
-    <aside class="docs-nav">
-
-      <a href="#doc-overview">OVERVIEW</a>
-      <a href="#doc-nft">NFT</a>
-      <a href="#doc-mint">MINT</a>
-      <a href="#doc-zeros">ZEROS</a>
-      <a href="#doc-staking">STAKING</a>
-      <a href="#doc-roadmap">ROADMAP</a>
-      <a href="#doc-disclaimer">DISCLAIMER</a>
-
-    </aside>
-
-
-    <div class="doc-content">
-
-
-      <article id="doc-overview">
-
-        <h3>NEON//ZERO — OVERVIEW</h3>
-
-        <p>
-          NEON//ZERO is a planned cyberpunk digital identity
-          collection centered around the N/Z Executor concept.
-          The current collection framework contains 5,000 NFTs.
-        </p>
-
-        <div class="notice">
-          CORE IDENTITY: N/Z<br>
-          COLLECTION: NEON//ZERO<br>
-          NFT SUPPLY: 5,000<br>
-          BLOCKCHAIN: ROBINCHAIN<br>
-          TOKEN: $ZEROS
-        </div>
-
-      </article>
-
-
-      <article id="doc-nft">
-
-        <h3>NFT COLLECTION</h3>
-
-        <p>
-          The collection consists of unique Executors numbered
-          sequentially from #0001 to #5000.
-        </p>
-
-        <ul>
-          <li>5,000 total NFTs</li>
-          <li>Token IDs #0001–#5000</li>
-          <li>Structured trait system</li>
-          <li>Individual metadata identity</li>
-          <li>N//Z visual system</li>
-          <li>Cyberpunk Executor aesthetic</li>
-        </ul>
-
-      </article>
-
-
-      <article id="doc-mint">
-
-        <h3>MINT ALLOCATION</h3>
-
-        <ul>
-          <li>Genesis / Free Mint — 100 NFTs — 2%</li>
-          <li>GTD / Guaranteed — 900 NFTs — 18%</li>
-          <li>Public Mint — 3,500 NFTs — 70%</li>
-          <li>Private Seed — 400 NFTs — 8%</li>
-          <li>Team & Project Reserve — 100 NFTs — 2%</li>
-        </ul>
-
-        <div class="notice">
-          TOTAL: 5,000 NFTs · 100%
-        </div>
-
-      </article>
-
-
-      <article id="doc-zeros">
-
-        <h3>$ZEROS TOKENOMICS</h3>
-
-        <p>
-          Planned maximum supply:
-          <strong style="color:var(--green);">
-            1,000,000,000 $ZEROS
-          </strong>
-        </p>
-
-        <ul>
-          <li>Community & Ecosystem — 30%</li>
-          <li>Treasury — 20%</li>
-          <li>NFT Staking — 15%</li>
-          <li>Private / Stake — 10%</li>
-          <li>Team & Core Contributors — 10%</li>
-          <li>Liquidity — 7%</li>
-          <li>Advisors & Partners — 5%</li>
-          <li>Marketing — 3%</li>
-        </ul>
-
-      </article>
-
-
-      <article id="doc-staking">
-
-        <h3>NFT STAKING</h3>
-
-        <p>
-          The planned staking framework connects eligible
-          N/Z NFT ownership with $ZEROS rewards.
-        </p>
-
-        <ul>
-          <li>10% planned NFT staking rewards</li>
-          <li>5% planned special & community rewards</li>
-          <li>Eligibility subject to official rules</li>
-          <li>Lock period and emissions to be announced</li>
-        </ul>
-
-      </article>
-
-
-      <article id="doc-roadmap">
-
-        <h3>ROADMAP</h3>
-
-        <ul>
-          <li>Phase 1 — NFT Collection Launch</li>
-          <li>Phase 2 — $ZEROS Network</li>
-          <li>Phase 3 — $ZEROS Utility</li>
-          <li>Phase 4 — Ecosystem Expansion</li>
-          <li>Phase 5 — Global Collaboration</li>
-        </ul>
-
-      </article>
-
-
-      <article id="doc-disclaimer">
-
-        <h3>IMPORTANT DISCLAIMER</h3>
-
-        <p>
-          NEON//ZERO is presented as a planned project.
-          Nothing on this website should be interpreted as
-          a guarantee of profit, investment advice or a promise
-          of future value.
-        </p>
-
-        <p style="margin-top:15px;">
-          Contract addresses, launch dates, staking mechanics,
-          token implementation and other technical details
-          remain subject to official announcement.
-        </p>
-
-        <div class="notice">
-          ALWAYS DO YOUR OWN RESEARCH (DYOR).
-        </div>
-
-      </article>
-
-
-    </div>
-
-  </div>
-
-</div>
-</section>
-
-</main>
-
-
-<!-- ================= FOOTER ================= -->
 
 <footer>
 
 <div class="container">
 
-  <div class="footer-grid">
+<img src="logo.png" class="footer-logo">
 
-    <div>
+<h2>NEON/ZERO</h2>
 
-      <div class="footer-brand">N/Z</div>
+<p>
 
-      <p>
-        NEON//ZERO — The Executors of Digital Realm.
-        A planned collection of 5,000 unique digital
-        identities built around the N/Z ecosystem.
-      </p>
+BUILD THE COLLECTION FIRST.
 
-    </div>
+DEFINE THE SYSTEM.
 
+VERIFY EVERYTHING.
 
-    <div>
+</p>
 
-      <h4>NETWORK</h4>
+<p>
 
-      <a href="#home">Home</a>
-      <a href="#collection">Collection</a>
-      <a href="#mint">Mint</a>
-      <a href="#utility">Utility</a>
+© 2026 NEON/ZERO
 
-    </div>
-
-
-    <div>
-
-      <h4>ECOSYSTEM</h4>
-
-      <a href="#zeros">$ZEROS</a>
-      <a href="#tokenomics">Tokenomics</a>
-      <a href="#staking">Staking</a>
-      <a href="#roadmap">Roadmap</a>
-
-    </div>
-
-
-    <div>
-
-      <h4>DOCUMENTATION</h4>
-
-      <a href="#docs">Docs</a>
-      <a href="#faq">FAQ</a>
-      <a href="#doc-disclaimer">Disclaimer</a>
-
-    </div>
-
-  </div>
-
-
-  <div class="disclaimer">
-
-    <strong>PROJECT STATUS: PLANNED</strong><br><br>
-
-    NEON//ZERO and $ZEROS are presented as planned
-    ecosystem concepts. This website does not constitute
-    financial, investment, legal or tax advice. No profit
-    or return is guaranteed. Final technical specifications,
-    contracts, launch timing and program rules may change.
-
-    <br><br>
-
-    <strong>DYOR — DO YOUR OWN RESEARCH.</strong>
-
-  </div>
-
-
-  <div class="copyright">
-
-    <span>© 2026 NEON//ZERO. ALL RIGHTS RESERVED.</span>
-
-    <span>N/Z PROTOCOL · BUILT ON ROBINCHAIN</span>
-
-  </div>
+</p>
 
 </div>
 
 </footer>
 
-
-<script>
-
-/*
-  N/Z WEBSITE
-  No external JavaScript libraries required.
-  GitHub Pages compatible.
-*/
-
-document.querySelectorAll('a[href^="#"]').forEach(link => {
-
-  link.addEventListener('click', function(e){
-
-    const target = document.querySelector(this.getAttribute('href'));
-
-    if(target){
-      e.preventDefault();
-
-      target.scrollIntoView({
-        behavior:'smooth',
-        block:'start'
-      });
-    }
-
-  });
-
-});
-
-
-/*
-  IMAGE ERROR HANDLER
-
-  If an NFT image has not been uploaded yet,
-  the card will remain visible instead of
-  creating a broken-image icon.
-*/
-
-document.querySelectorAll('.nft-image').forEach(img => {
-
-  img.addEventListener('error', function(){
-
-    this.removeAttribute('src');
-
-    this.alt = 'NFT artwork pending upload';
-
-    this.style.display = 'grid';
-
-    this.style.background =
-      'radial-gradient(circle,rgba(57,255,136,.12),transparent 45%),#020806';
-
-  });
-
-});
-
-
-/*
-  SYSTEM STATUS
-*/
-
-console.log(
-  'N/Z SYSTEM ONLINE — NEON//ZERO — 5,000 EXECUTORS'
-);
-
-</script>
+<script src="script.js"></script>
 
 </body>
-         </html>
+
+</html>
+
+  
